@@ -44,6 +44,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 64px;display:fl
 .nav-cta{background:var(--dark)!important;color:#fff!important;font-weight:500!important;padding:11px 24px;border-radius:var(--radius-sm);transition:background 0.2s!important;}
 .nav-cta:hover{background:var(--red)!important;}
 
+/* HAMBURGER BUTTON */
+.nav-burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:transparent;border:1.5px solid var(--border);border-radius:8px;cursor:pointer;padding:8px;transition:border-color 0.2s;}
+.nav-burger:hover{border-color:var(--red);}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--dark);border-radius:2px;transition:all 0.25s ease;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* MOBILE MENU OVERLAY */
+.mobile-menu{display:none;position:fixed;top:65px;left:0;right:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:99;padding:24px;flex-direction:column;gap:4px;box-shadow:0 16px 40px rgba(26,10,8,0.08);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:16px;font-weight:400;color:var(--muted);text-decoration:none;padding:14px 16px;border-radius:10px;transition:all 0.15s;display:block;}
+.mobile-menu a:hover{color:var(--text);background:var(--bg2);}
+.mobile-menu .mob-cta{background:var(--dark);color:#fff!important;font-weight:500;text-align:center;margin-top:8px;}
+.mobile-menu .mob-cta:hover{background:var(--red)!important;}
+.mobile-menu-divider{height:1px;background:var(--border);margin:8px 0;}
+
 /* HERO */
 .hero{min-height:100vh;padding:140px 64px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:var(--red-light);border-radius:50%;opacity:0.7;pointer-events:none;}
@@ -173,17 +190,40 @@ footer{background:var(--footer-bg);padding:56px 64px 32px;}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
+/* ── MOBILE ── */
 @media(max-width:960px){
-  nav{padding:16px 24px;}.nav-links{display:none;}
+  nav{padding:16px 20px;}
+
+  /* hide desktop links, show burger */
+  .nav-links{display:none;}
+  .nav-burger{display:flex;}
+
   section{padding:72px 24px;}
-  .hero{grid-template-columns:1fr;padding:120px 24px 60px;}
+  footer{padding:48px 24px 28px;}
+
+  .hero{grid-template-columns:1fr;padding:110px 24px 60px;}
   .hero-visual{display:none;}
-  #why{grid-template-columns:1fr;gap:40px;}
-  .steps{grid-template-columns:1fr;}.steps::before{display:none;}
-  .plans{grid-template-columns:1fr;}
+
+  #why{grid-template-columns:1fr;gap:40px;padding:72px 24px;}
+
+  .steps{grid-template-columns:1fr;gap:28px;}
+  .steps::before{display:none;}
+
+  .plans{grid-template-columns:1fr;max-width:100%;}
+
   .footer-top{flex-direction:column;}
   .footer-links{gap:32px;flex-wrap:wrap;}
   .footer-bottom{flex-direction:column;gap:8px;}
+
+  .contact-card{min-width:100%;width:100%;}
+}
+
+@media(max-width:480px){
+  .hero h1{font-size:38px;}
+  .hero-desc{font-size:16px;}
+  .hero-btns{flex-direction:column;}
+  .btn-primary,.btn-ghost{justify-content:center;}
+  .why-visual{padding:36px 24px;}
 }
 </style>
 </head>
@@ -200,7 +240,19 @@ footer{background:var(--footer-bg);padding:56px 64px 32px;}
     <li><a href="#why">Why Us</a></li>
     <li><a href="start-a-project.html" class="nav-cta">Start a Project</a></li>
   </ul>
+  <button class="nav-burger" id="burger" aria-label="Toggle menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="services.html" onclick="closeMenu()">Services</a>
+  <a href="gallery.html" onclick="closeMenu()">Gallery</a>
+  <a href="#why" onclick="closeMenu()">Why Us</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="start-a-project.html" class="mob-cta" onclick="closeMenu()">Start a Project</a>
+</div>
 
 <section class="hero">
   <div class="hero-content">
@@ -390,16 +442,48 @@ footer{background:var(--footer-bg);padding:56px 64px 32px;}
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 Kulan Studio. All rights reserved.</p>
-    <p>mohamed@kulanstudio.com</p>
+    <p>© 2026 Kulan Studio. All rights reserved.</p>
+    <p>kulanstudio.com</p>
   </div>
 </footer>
 
 <script>
+// Scroll reveal
 const obs = new IntersectionObserver((entries) => {
-  entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*90); });
+  entries.forEach((e,i) => {
+    if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'), i*90);
+  });
 },{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Mobile menu
+function toggleMenu(){
+  const burger = document.getElementById('burger');
+  const menu   = document.getElementById('mobile-menu');
+  burger.classList.toggle('open');
+  menu.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+
+function closeMenu(){
+  document.getElementById('burger').classList.remove('open');
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Close menu on outside click
+document.addEventListener('click', function(e){
+  const burger = document.getElementById('burger');
+  const menu   = document.getElementById('mobile-menu');
+  if(menu.classList.contains('open') && !menu.contains(e.target) && !burger.contains(e.target)){
+    closeMenu();
+  }
+});
+
+// Close menu on resize back to desktop
+window.addEventListener('resize', function(){
+  if(window.innerWidth > 960) closeMenu();
+});
 </script>
 </body>
 </html>
