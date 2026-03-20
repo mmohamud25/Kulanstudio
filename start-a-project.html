@@ -85,7 +85,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 64px;display:fl
 footer{background:var(--footer-bg);padding:28px 64px;}
 footer p{font-size:13px;color:var(--footer-muted);display:flex;justify-content:space-between;}
 
-@media(max-width:960px){nav{padding:16px 24px;}.page-wrap{grid-template-columns:1fr;padding:100px 24px 60px;gap:40px;}.page-left{position:static;}.form-card{padding:28px 20px;}.form-row{grid-template-columns:1fr;}footer{padding:24px;}}
+@media(max-width:960px){nav{padding:16px 20px;}.nav-burger{display:flex;}nav{padding:16px 20px;}.page-wrap{grid-template-columns:1fr;padding:100px 24px 60px;gap:40px;}.page-left{position:static;}.form-card{padding:28px 20px;}.form-row{grid-template-columns:1fr;}footer{padding:24px;}}
+
+/* HAMBURGER */
+.nav-burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:transparent;border:1.5px solid var(--border);border-radius:8px;cursor:pointer;padding:8px;transition:border-color 0.2s;}
+.nav-burger:hover{border-color:var(--red);}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--dark);border-radius:2px;transition:all 0.25s ease;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:65px;left:0;right:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:99;padding:24px;flex-direction:column;gap:4px;box-shadow:0 16px 40px rgba(26,10,8,0.08);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:16px;font-weight:400;color:var(--muted);text-decoration:none;padding:14px 16px;border-radius:10px;transition:all 0.15s;display:block;}
+.mobile-menu a:hover{color:var(--text);background:var(--bg2);}
+.mobile-menu .mob-cta{background:var(--dark);color:#fff!important;font-weight:500;text-align:center;margin-top:8px;}
+.mobile-menu .mob-cta:hover{background:var(--red)!important;}
+.mobile-menu-divider{height:1px;background:var(--border);margin:8px 0;}
 </style>
 </head>
 <body>
@@ -98,7 +113,19 @@ footer p{font-size:13px;color:var(--footer-muted);display:flex;justify-content:s
     <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
     Back to Home
   </a>
+  <button class="nav-burger" id="burger" aria-label="Toggle menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="services.html" onclick="closeMenu()">Services</a>
+  <a href="gallery.html" onclick="closeMenu()">Gallery</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="start-a-project.html" class="mob-cta" onclick="closeMenu()">Start a Project</a>
+</div>
 
 <div class="page-wrap">
   <div class="page-left">
@@ -172,9 +199,33 @@ footer p{font-size:13px;color:var(--footer-muted);display:flex;justify-content:s
   </div>
 </div>
 
-<footer><p><span>© 2025 Kulan Studio</span><span>mohamed@kulanstudio.com</span></p></footer>
+<footer><p><span>© 2025 Kulan Studio</span><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5934363138343c3d19322c3538372a2d2c3d3036773a3634">[email&#160;protected]</a></span></p></footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+// Mobile menu
+function toggleMenu(){
+  const burger = document.getElementById('burger');
+  const menu   = document.getElementById('mobile-menu');
+  burger.classList.toggle('open');
+  menu.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+function closeMenu(){
+  document.getElementById('burger').classList.remove('open');
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('click', function(e){
+  const burger = document.getElementById('burger');
+  const menu   = document.getElementById('mobile-menu');
+  if(menu && menu.classList.contains('open') && !menu.contains(e.target) && !burger.contains(e.target)){
+    closeMenu();
+  }
+});
+window.addEventListener('resize', function(){
+  if(window.innerWidth > 960) closeMenu();
+});
+</script><script>
 const params=new URLSearchParams(window.location.search);
 const plan=params.get('plan');
 if(plan){const m={basic:'Basic Maintenance — $29/mo',standard:'Standard Maintenance — $59/mo',pro:'Pro Maintenance — $99/mo'};const t=m[plan.toLowerCase()];if(t){const r=document.querySelector(`input[value="${t}"]`);if(r){r.checked=true;r.closest('.maint-plan').classList.add('selected');}};setTimeout(updateTotal,100);}
@@ -191,7 +242,4 @@ function updateTotal(){setTimeout(()=>{
   if(oneTime>0||maintPrice>0){summary.classList.add('visible');document.getElementById('ps-lines').innerHTML=lines;document.getElementById('ps-onetime').textContent='$'+oneTime.toLocaleString();if(maintPrice>0){monthlyRow.style.display='flex';document.getElementById('ps-monthly').textContent='$'+maintPrice+'/mo';}else{monthlyRow.style.display='none';}}else{summary.classList.remove('visible');}
 },0);}
 const form=document.getElementById('project-form');
-form.addEventListener('submit',async(e)=>{e.preventDefault();const btn=form.querySelector('.form-submit');btn.innerHTML='Sending...';btn.disabled=true;try{const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});if(res.ok){document.getElementById('form-content').style.display='none';document.getElementById('success-msg').style.display='block';}else{btn.innerHTML='Something went wrong. Try again.';btn.disabled=false;}}catch{btn.innerHTML='Something went wrong. Try again.';btn.disabled=false;}});
-</script>
-</body>
-</html>
+form.addEventListener('submit',async(e)=>{e.preventDefault();const btn=form.querySelector('.form-submit');btn.innerHTML='Sending...';btn.disabled=true;try{const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});if(res.ok){document.getElementById('form-content').style.display='none';document
