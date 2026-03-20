@@ -3,131 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery | Jeego IT & Consulting Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Gallery | Kulan Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--green:#16a872;--green-light:#e8f7f1;--green-mid:#c8ead9;--bg:#ffffff;--bg2:#f7f9f8;--bg3:#f0f5f2;--text:#1a2420;--muted:#6b7f78;--border:#e2ebe7;--footer-bg:#111c18;--footer-muted:#6b8a80;--footer-text:#c8d8d2;--radius:14px;--radius-sm:8px;}
+:root{--red:#e63946;--red-light:#fef2f3;--red-mid:#fcc8cb;--dark:#1a0a08;--bg:#ffffff;--bg2:#fafaf9;--bg3:#f5f2f0;--text:#1a0a08;--muted:#78665e;--border:#e8ddd9;--footer-bg:#120705;--footer-muted:#7a4a3e;--radius:16px;--radius-sm:10px;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
-
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.nav-logo-icon{width:34px;height:34px;}
-.nav-brand{font-size:16px;font-weight:600;letter-spacing:2px;color:var(--text);}
-.nav-links{display:flex;gap:32px;list-style:none;align-items:center;}
+body{font-family:'Instrument Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 64px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-mark{display:grid;grid-template-columns:1fr 0.5fr;grid-template-rows:1fr 0.68fr;gap:3px;width:32px;height:28px;}
+.nm1{background:var(--red);border-radius:4px;}.nm2{background:var(--red);border-radius:4px;opacity:0.35;}.nm3{background:var(--red);border-radius:4px;opacity:0.35;}.nm4{background:var(--red);border-radius:4px;}
+.nav-wordmark{font-family:'DM Serif Display',serif;font-size:20px;color:var(--dark);}
+.nav-wordmark span{color:var(--red);font-style:italic;}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
 .nav-links a{font-size:14px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
 .nav-links a:hover,.nav-links a.active{color:var(--text);}
-.nav-cta{background:var(--text)!important;color:#fff!important;font-weight:500!important;padding:10px 22px;border-radius:var(--radius-sm);}
-.nav-cta:hover{background:var(--green)!important;}
+.nav-cta{background:var(--dark)!important;color:#fff!important;font-weight:500!important;padding:11px 24px;border-radius:var(--radius-sm);}
+.nav-cta:hover{background:var(--red)!important;}
 
-/* HERO */
-.page-hero{padding:160px 60px 80px;text-align:center;position:relative;overflow:hidden;}
-.hero-blob{position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:900px;height:500px;background:var(--green-light);border-radius:50%;opacity:0.45;pointer-events:none;}
-.section-label{font-size:12px;font-weight:500;letter-spacing:3px;color:var(--green);text-transform:uppercase;margin-bottom:14px;}
-.page-hero h1{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,60px);font-weight:600;line-height:1.1;margin-bottom:18px;position:relative;}
-.page-hero h1 em{font-style:italic;font-weight:300;color:var(--green);}
-.page-hero p{font-size:17px;font-weight:300;color:var(--muted);max-width:500px;margin:0 auto 0;line-height:1.8;position:relative;}
+.page-hero{padding:160px 64px 80px;text-align:center;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:400px;background:var(--red-light);border-radius:50%;opacity:0.5;pointer-events:none;}
+.sec-label{font-size:12px;font-weight:500;letter-spacing:4px;color:var(--red);text-transform:uppercase;margin-bottom:14px;}
+.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(40px,5vw,64px);line-height:1.1;margin-bottom:18px;position:relative;}
+.page-hero h1 em{font-style:italic;color:var(--red);}
+.page-hero p{font-size:18px;font-weight:300;color:var(--muted);max-width:520px;margin:0 auto;line-height:1.8;position:relative;}
 
-/* FILTERS */
-.filter-bar{padding:0 60px 60px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;position:relative;}
-.filter-btn{background:var(--bg2);border:1.5px solid var(--border);border-radius:100px;padding:9px 22px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;transition:all 0.2s;}
-.filter-btn:hover{border-color:var(--green-mid);color:var(--text);}
-.filter-btn.active{background:var(--green);border-color:var(--green);color:#fff;}
+.filter-bar{padding:0 64px 60px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.filter-btn{background:var(--bg2);border:1.5px solid var(--border);border-radius:100px;padding:10px 24px;font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;transition:all 0.2s;}
+.filter-btn:hover{border-color:var(--red-mid);color:var(--text);}
+.filter-btn.active{background:var(--dark);border-color:var(--dark);color:#fff;}
 
-/* GALLERY GRID */
-.gallery-section{padding:0 60px 100px;}
+.gallery-wrap{padding:0 64px 100px;}
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-
-.gallery-item{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s;cursor:pointer;}
-.gallery-item:hover{border-color:var(--green);transform:translateY(-5px);box-shadow:0 16px 48px rgba(22,168,114,0.1);}
+.gallery-item{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all 0.3s;cursor:pointer;}
+.gallery-item:hover{border-color:var(--red);transform:translateY(-5px);box-shadow:0 16px 48px rgba(230,57,70,0.08);}
 .gallery-item.hidden{display:none;}
-
-/* PREVIEW AREAS - styled mockups */
-.preview{height:220px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-
-/* Website previews */
-.preview-web-1{background:#f0f5f2;}
-.preview-web-2{background:#f5f0f7;}
-.preview-web-3{background:#f0f4f8;}
-
-/* Logo previews */
-.preview-logo-1{background:#1a2420;}
-.preview-logo-2{background:#0d1f2d;}
-.preview-logo-3{background:#f7f9f8;}
-
-/* Email previews */
-.preview-email-1{background:#f8f9fc;}
-.preview-email-2{background:#fdf8f0;}
-
-/* Consulting previews */
-.preview-consult-1{background:#f0f5f0;}
-
-.preview-label{position:absolute;top:12px;left:12px;background:rgba(255,255,255,0.9);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:0.5px;}
-
-/* Website mockup SVGs */
-.mock-browser{background:#fff;border-radius:8px;width:280px;box-shadow:0 4px 20px rgba(0,0,0,0.08);overflow:hidden;border:1px solid #e0e0e0;}
-.mock-browser-bar{background:#f5f5f5;padding:8px 10px;display:flex;align-items:center;gap:5px;border-bottom:1px solid #e8e8e8;}
+.preview{height:220px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.preview-label{position:absolute;top:12px;left:12px;background:rgba(255,255,255,0.9);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:11px;font-weight:500;color:var(--muted);}
+.mock-browser{background:#fff;border-radius:8px;width:280px;box-shadow:0 4px 20px rgba(0,0,0,0.1);overflow:hidden;border:1px solid #e0e0e0;}
+.mock-bar{background:#f5f5f5;padding:8px 10px;display:flex;align-items:center;gap:5px;border-bottom:1px solid #e8e8e8;}
 .mock-dot{width:8px;height:8px;border-radius:50%;}
 .mock-url{background:#e8e8e8;border-radius:4px;height:14px;flex:1;margin:0 8px;}
 .mock-body{padding:12px;}
-
-/* Info area */
 .gallery-info{padding:20px 22px;}
-.gallery-tag{display:inline-block;background:var(--green-light);border:1px solid var(--green-mid);border-radius:100px;padding:3px 12px;font-size:11px;font-weight:500;color:var(--green);margin-bottom:10px;}
-.gallery-title{font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:6px;color:var(--text);}
+.gallery-tag{display:inline-block;background:var(--red-light);border:1px solid var(--red-mid);border-radius:100px;padding:3px 12px;font-size:11px;font-weight:500;color:var(--red);margin-bottom:10px;}
+.gallery-title{font-family:'DM Serif Display',serif;font-size:18px;margin-bottom:6px;}
 .gallery-desc{font-size:13px;font-weight:300;color:var(--muted);line-height:1.65;margin-bottom:16px;}
-.gallery-cta{font-size:13px;font-weight:500;color:var(--green);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap 0.2s;}
+.gallery-cta{font-size:13px;font-weight:500;color:var(--red);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap 0.2s;}
 .gallery-cta:hover{gap:8px;}
 
-/* CTA SECTION */
-.cta-section{padding:100px 60px;text-align:center;background:var(--bg2);}
-.cta-section h2{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,44px);font-weight:600;margin-bottom:16px;color:var(--text);}
-.cta-section h2 em{font-style:italic;font-weight:300;color:var(--green);}
+.cta-section{padding:100px 64px;text-align:center;background:var(--bg2);}
+.cta-section h2{font-family:'DM Serif Display',serif;font-size:clamp(32px,4vw,52px);margin-bottom:16px;}
+.cta-section h2 em{font-style:italic;color:var(--red);}
 .cta-section p{font-size:17px;font-weight:300;color:var(--muted);max-width:480px;margin:0 auto 40px;line-height:1.8;}
-.btn-primary{background:var(--green);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:500;padding:14px 28px;border-radius:var(--radius-sm);border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.2s;}
-.btn-primary:hover{background:#128a5e;transform:translateY(-1px);}
+.btn-primary{background:var(--red);color:#fff;font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:500;padding:15px 30px;border-radius:var(--radius-sm);border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:background 0.2s,transform 0.2s;}
+.btn-primary:hover{background:#c62d3a;transform:translateY(-2px);}
 
-/* FOOTER */
-footer{background:var(--footer-bg);padding:32px 60px;}
+footer{background:var(--footer-bg);padding:28px 64px;}
 .footer-bottom{display:flex;justify-content:space-between;}
 footer p{font-size:13px;color:var(--footer-muted);}
 
-.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
-
-@media(max-width:900px){
-  nav{padding:16px 24px;}.nav-links{display:none;}
-  .page-hero{padding:120px 24px 60px;}
-  .filter-bar{padding:0 24px 48px;}
-  .gallery-section{padding:0 24px 80px;}
-  .gallery-grid{grid-template-columns:1fr;}
-  .cta-section{padding:80px 24px;}
-  footer{padding:24px;}.footer-bottom{flex-direction:column;gap:6px;}
-}
+@media(max-width:960px){nav{padding:16px 24px;}.nav-links{display:none;}.page-hero{padding:120px 24px 60px;}.filter-bar{padding:0 24px 48px;}.gallery-wrap{padding:0 24px 80px;}.gallery-grid{grid-template-columns:1fr;}.cta-section{padding:80px 24px;}footer{padding:24px;}.footer-bottom{flex-direction:column;gap:8px;}}
 </style>
 </head>
 <body>
-
 <nav>
   <a href="index.html" class="nav-logo">
-    <svg class="nav-logo-icon" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="0" width="44" height="44" rx="9" fill="#e8f7f1" stroke="#16a872" stroke-width="1.5"/>
-      <line x1="9" y1="22" x2="18" y2="22" stroke="#16a872" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="26" y1="22" x2="35" y2="22" stroke="#16a872" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="22" y1="9" x2="22" y2="18" stroke="#16a872" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="22" y1="26" x2="22" y2="35" stroke="#16a872" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="13" y1="13" x2="18" y2="18" stroke="#16a872" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-      <line x1="26" y1="26" x2="31" y2="31" stroke="#16a872" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-      <line x1="31" y1="13" x2="26" y2="18" stroke="#16a872" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-      <line x1="13" y1="31" x2="18" y2="26" stroke="#16a872" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-      <circle cx="22" cy="22" r="4" fill="#e8f7f1" stroke="#16a872" stroke-width="1.5"/>
-      <circle cx="22" cy="22" r="1.8" fill="#16a872"/>
-      <circle cx="9" cy="22" r="1.8" fill="#16a872"/>
-      <circle cx="35" cy="22" r="1.8" fill="#16a872"/>
-      <circle cx="22" cy="9" r="1.8" fill="#16a872"/>
-      <circle cx="22" cy="35" r="1.8" fill="#16a872"/>
-    </svg>
-    <span class="nav-brand">JEEGO IT</span>
+    <div class="nav-mark"><div class="nm1"></div><div class="nm2"></div><div class="nm3"></div><div class="nm4"></div></div>
+    <span class="nav-wordmark">Kulan <span>Studio</span></span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -137,131 +82,254 @@ footer p{font-size:13px;color:var(--footer-muted);}
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="page-hero reveal">
-  <div class="hero-blob"></div>
-  <p class="section-label">Our work</p>
-  <h1>Examples of what we <em>build for you.</em></h1>
-  <p>Browse through website designs, logos, email setups, and consulting deliverables. Every project is handled personally from start to finish.</p>
+  <p class="sec-label">Our work</p>
+  <h1>Examples of what we<br><em>build for you.</em></h1>
+  <p>Browse websites, logos, and email setups. Every project is handled personally from start to finish.</p>
 </div>
 
-<!-- FILTERS -->
 <div class="filter-bar reveal">
   <button class="filter-btn active" data-filter="all">All Projects</button>
   <button class="filter-btn" data-filter="website">Website Design</button>
   <button class="filter-btn" data-filter="logo">Logo & Branding</button>
   <button class="filter-btn" data-filter="email">Business Email</button>
-  <button class="filter-btn" data-filter="consulting">Digital Consulting</button>
+  <button class="filter-btn" data-filter="consulting">Consulting</button>
 </div>
 
-<!-- GALLERY -->
-<section class="gallery-section">
+<section class="gallery-wrap">
   <div class="gallery-grid reveal">
 
-    <!-- WEBSITE 1: Local restaurant -->
+    <!-- WEBSITE 1: Bella Vita Bakery -->
     <div class="gallery-item" data-category="website">
-      <div class="preview preview-web-1">
+      <div class="preview" style="background:#fdf8f3;">
         <span class="preview-label">Website Design</span>
         <div class="mock-browser">
-          <div class="mock-browser-bar">
-            <div class="mock-dot" style="background:#ff6058"></div>
-            <div class="mock-dot" style="background:#ffbd2e"></div>
-            <div class="mock-dot" style="background:#28ca41"></div>
-            <div class="mock-url"></div>
-          </div>
+          <div class="mock-bar"><div class="mock-dot" style="background:#ff6058"></div><div class="mock-dot" style="background:#ffbd2e"></div><div class="mock-dot" style="background:#28ca41"></div><div class="mock-url"></div></div>
           <div class="mock-body">
             <svg width="256" height="140" viewBox="0 0 256 140">
-              <rect x="0" y="0" width="256" height="38" rx="4" fill="#16a872"/>
-              <text x="128" y="14" font-family="serif" font-size="9" font-weight="600" fill="white" text-anchor="middle">MESA KITCHEN</text>
-              <text x="128" y="26" font-family="sans-serif" font-size="6" fill="rgba(255,255,255,0.8)" text-anchor="middle">HOME  MENU  RESERVATIONS  ABOUT  CONTACT</text>
-              <rect x="8" y="46" width="148" height="80" rx="4" fill="#f0ede8"/>
-              <text x="82" y="72" font-family="serif" font-size="11" font-weight="600" fill="#1a2420" text-anchor="middle">Fresh Food.</text>
-              <text x="82" y="86" font-family="serif" font-size="11" font-style="italic" fill="#16a872" text-anchor="middle">Real Flavors.</text>
-              <rect x="60" y="94" width="44" height="16" rx="8" fill="#16a872"/>
-              <text x="82" y="104" font-family="sans-serif" font-size="7" fill="white" text-anchor="middle">Book a Table</text>
-              <rect x="164" y="46" width="84" height="80" rx="4" fill="#e8f0e8"/>
-              <rect x="170" y="52" width="72" height="42" rx="3" fill="#c8d8b8"/>
-              <text x="206" y="80" font-family="sans-serif" font-size="18" fill="#16a872" text-anchor="middle" opacity="0.5">🍃</text>
-              <rect x="170" y="100" width="72" height="6" rx="3" fill="#d0d8d0"/>
-              <rect x="170" y="110" width="48" height="6" rx="3" fill="#d0d8d0"/>
+              <rect x="0" y="0" width="256" height="32" fill="#2a1506"/>
+              <text x="128" y="21" font-family="serif" font-size="11" font-weight="700" fill="#fdf4e8" text-anchor="middle" font-style="italic">Bella Vita Bakery</text>
+              <rect x="0" y="32" width="256" height="108" fill="#fdf8f3"/>
+              <text x="128" y="64" font-family="serif" font-size="13" font-weight="700" fill="#3d2010" text-anchor="middle">Fresh baked,</text>
+              <text x="128" y="80" font-family="serif" font-size="11" font-style="italic" fill="#c47a3a" text-anchor="middle">every single morning.</text>
+              <rect x="88" y="90" width="80" height="18" rx="9" fill="#c47a3a"/>
+              <text x="128" y="102" font-family="sans-serif" font-size="7" fill="white" text-anchor="middle">See Our Menu →</text>
+              <rect x="20" y="115" width="50" height="14" rx="4" fill="#f5e6cc"/>
+              <rect x="80" y="115" width="50" height="14" rx="4" fill="#f5e6cc"/>
+              <rect x="140" y="115" width="50" height="14" rx="4" fill="#f5e6cc"/>
             </svg>
           </div>
         </div>
       </div>
       <div class="gallery-info">
         <span class="gallery-tag">Website Design</span>
-        <div class="gallery-title">Mesa Kitchen</div>
-        <div class="gallery-desc">A 5-page restaurant website with online reservation form, menu display, and mobile-first design. Delivered in 48 hours.</div>
+        <div class="gallery-title">Bella Vita Bakery</div>
+        <div class="gallery-desc">5-page website for a local artisan bakery. Warm, elegant design with menu display and order inquiry form. Delivered in 48 hours.</div>
         <a href="start-a-project.html" class="gallery-cta">Start a similar project <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
       </div>
     </div>
 
-    <!-- LOGO 1: Barbershop -->
+    <!-- LOGO 1: The Sharp Barber -->
     <div class="gallery-item" data-category="logo">
-      <div class="preview preview-logo-1">
-        <span class="preview-label" style="background:rgba(255,255,255,0.15);color:#c8ead9;border-color:rgba(255,255,255,0.1);">Logo & Branding</span>
+      <div class="preview" style="background:#1a2420;">
+        <span class="preview-label" style="background:rgba(255,255,255,0.1);color:#c8d8c8;border-color:rgba(255,255,255,0.1);">Logo & Branding</span>
         <svg width="240" height="160" viewBox="0 0 240 160">
           <rect x="40" y="20" width="160" height="120" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
           <circle cx="120" cy="64" r="28" fill="none" stroke="#c9a84c" stroke-width="2"/>
           <text x="120" y="60" font-family="serif" font-size="11" font-weight="700" fill="#c9a84c" text-anchor="middle">THE</text>
           <text x="120" y="73" font-family="serif" font-size="11" font-weight="700" fill="#c9a84c" text-anchor="middle">SHARP</text>
           <line x1="80" y1="98" x2="160" y2="98" stroke="rgba(201,168,76,0.4)" stroke-width="0.5"/>
-          <text x="120" y="110" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" text-anchor="middle" letter-spacing="4">BARBER CO.</text>
-          <circle cx="80" cy="98" r="2" fill="#c9a84c"/>
-          <circle cx="160" cy="98" r="2" fill="#c9a84c"/>
+          <text x="120" y="112" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.6)" text-anchor="middle" letter-spacing="4">BARBER CO.</text>
+          <circle cx="80" cy="98" r="2" fill="#c9a84c"/><circle cx="160" cy="98" r="2" fill="#c9a84c"/>
         </svg>
       </div>
       <div class="gallery-info">
         <span class="gallery-tag">Logo & Branding</span>
         <div class="gallery-title">The Sharp Barber Co.</div>
-        <div class="gallery-desc">Premium barbershop brand identity with circular badge logo, custom color palette, and full file package including light and dark versions.</div>
+        <div class="gallery-desc">Premium barbershop brand identity with circular badge logo, gold color palette, and full file package including all versions.</div>
         <a href="start-a-project.html" class="gallery-cta">Start a similar project <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
       </div>
     </div>
 
-    <!-- WEBSITE 2: Cleaning service -->
+    <!-- WEBSITE 2: NovaTech -->
     <div class="gallery-item" data-category="website">
-      <div class="preview preview-web-2">
-        <span class="preview-label">Website Design</span>
-        <div class="mock-browser">
-          <div class="mock-browser-bar">
-            <div class="mock-dot" style="background:#ff6058"></div>
-            <div class="mock-dot" style="background:#ffbd2e"></div>
-            <div class="mock-dot" style="background:#28ca41"></div>
-            <div class="mock-url"></div>
+      <div class="preview" style="background:#060d14;">
+        <span class="preview-label" style="background:rgba(255,255,255,0.1);color:#c8d8d8;border-color:rgba(255,255,255,0.1);">Website Design</span>
+        <div class="mock-browser" style="background:#0a1929;border-color:rgba(56,189,248,0.2);">
+          <div class="mock-bar" style="background:#0f1e2e;border-color:rgba(56,189,248,0.1);">
+            <div class="mock-dot" style="background:#ff6058"></div><div class="mock-dot" style="background:#ffbd2e"></div><div class="mock-dot" style="background:#28ca41"></div><div class="mock-url" style="background:rgba(255,255,255,0.1);"></div>
           </div>
           <div class="mock-body">
             <svg width="256" height="140" viewBox="0 0 256 140">
-              <rect x="0" y="0" width="256" height="34" fill="#2d1b4e"/>
-              <text x="20" y="21" font-family="sans-serif" font-size="9" font-weight="700" fill="white">SPARKLE PRO</text>
-              <rect x="178" y="8" width="66" height="18" rx="9" fill="#9b59b6"/>
-              <text x="211" y="20" font-family="sans-serif" font-size="7" fill="white" text-anchor="middle">Get a Quote</text>
-              <rect x="0" y="34" width="256" height="56" fill="#f8f5ff"/>
-              <text x="128" y="56" font-family="serif" font-size="12" font-weight="600" fill="#2d1b4e" text-anchor="middle">Professional Cleaning</text>
-              <text x="128" y="70" font-family="serif" font-size="9" font-style="italic" fill="#9b59b6" text-anchor="middle">for homes and offices</text>
-              <rect x="88" y="76" width="80" height="8" rx="4" fill="#9b59b6" opacity="0.15"/>
-              <rect x="104" y="97" width="48" height="34" rx="4" fill="#ede8f5"/>
-              <rect x="0" y="97" width="96" height="34" rx="0" fill="#f0ecf8"/>
-              <rect x="160" y="97" width="96" height="34" rx="0" fill="#ede8f5"/>
-              <text x="48" y="117" font-family="sans-serif" font-size="7" fill="#6b4c8a" text-anchor="middle">Residential</text>
-              <text x="128" y="117" font-family="sans-serif" font-size="7" fill="#6b4c8a" text-anchor="middle">Commercial</text>
-              <text x="208" y="117" font-family="sans-serif" font-size="7" fill="#6b4c8a" text-anchor="middle">Deep Clean</text>
+              <rect x="0" y="0" width="256" height="140" fill="#0a1929"/>
+              <text x="18" y="20" font-family="sans-serif" font-size="12" font-weight="700" fill="white">Nova<tspan fill="#38bdf8">Tech</tspan></text>
+              <rect x="186" y="8" width="60" height="18" rx="9" fill="#38bdf8"/>
+              <text x="216" y="20" font-family="sans-serif" font-size="7" fill="#0a1929" text-anchor="middle" font-weight="600">Get a Quote</text>
+              <text x="18" y="52" font-family="sans-serif" font-size="14" font-weight="700" fill="white">Your device,</text>
+              <text x="18" y="68" font-family="sans-serif" font-size="11" font-weight="700" fill="#38bdf8">fixed fast.</text>
+              <rect x="18" y="80" width="120" height="5" rx="2" fill="rgba(255,255,255,0.1)"/>
+              <rect x="18" y="90" width="90" height="5" rx="2" fill="rgba(255,255,255,0.07)"/>
+              <rect x="18" y="105" width="70" height="20" rx="10" fill="#38bdf8"/>
+              <text x="53" y="118" font-family="sans-serif" font-size="7" fill="#0a1929" text-anchor="middle" font-weight="600">Free Quote →</text>
             </svg>
           </div>
         </div>
       </div>
       <div class="gallery-info">
         <span class="gallery-tag">Website Design</span>
-        <div class="gallery-title">Sparkle Pro Cleaning</div>
-        <div class="gallery-desc">A service-focused website for a local cleaning company with service tiers, quote request form, and trust-building sections.</div>
+        <div class="gallery-title">NovaTech Repairs</div>
+        <div class="gallery-desc">Dark, sharp website for a device repair shop with service listings, quote form, and 90-day warranty messaging. Mobile optimized.</div>
         <a href="start-a-project.html" class="gallery-cta">Start a similar project <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
       </div>
     </div>
 
-    <!-- LOGO 2: Bakery -->
+    <!-- LOGO 2: GreenEdge Landscaping -->
     <div class="gallery-item" data-category="logo">
-      <div class="preview preview-logo-2">
-        <span class="preview-label" style="background:rgba(255,255,255,0.15);color:#c8ead9;border-color:rgba(255,255,255,0.1);">Logo & Branding</span>
+      <div class="preview" style="background:#f7faf8;">
+        <span class="preview-label">Logo & Branding</span>
+        <svg width="240" height="160" viewBox="0 0 240 160">
+          <rect x="60" y="20" width="120" height="120" rx="60" fill="#eef5f1" stroke="#c8ead9" stroke-width="1.5"/>
+          <ellipse cx="120" cy="88" rx="36" ry="20" fill="#16a872" opacity="0.15"/>
+          <path d="M120 88 Q100 60 84 68 Q90 50 120 46 Q150 50 156 68 Q140 60 120 88Z" fill="#16a872"/>
+          <path d="M120 88 Q104 72 92 78 Q96 64 120 62 Q144 64 148 78 Q136 72 120 88Z" fill="#128a5e"/>
+          <rect x="117" y="88" width="6" height="20" rx="3" fill="#0d6644"/>
+          <text x="120" y="125" font-family="sans-serif" font-size="12" font-weight="700" fill="#1a2420" text-anchor="middle">GreenEdge</text>
+          <text x="120" y="136" font-family="sans-serif" font-size="7" fill="#6b7f78" text-anchor="middle" letter-spacing="2">LANDSCAPING</text>
+        </svg>
+      </div>
+      <div class="gallery-info">
+        <span class="gallery-tag">Logo & Branding</span>
+        <div class="gallery-title">GreenEdge Landscaping</div>
+        <div class="gallery-desc">Nature-inspired logo for a local landscaping company. Clean leaf mark, fresh green palette, full file package delivered in 48 hours.</div>
+        <a href="start-a-project.html" class="gallery-cta">Start a similar project <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+      </div>
+    </div>
+
+    <!-- EMAIL 1 -->
+    <div class="gallery-item" data-category="email">
+      <div class="preview" style="background:#f8f9fc;">
+        <span class="preview-label">Business Email</span>
+        <svg width="300" height="180" viewBox="0 0 300 180">
+          <rect x="20" y="20" width="260" height="140" rx="8" fill="white" stroke="#e2ebe7" stroke-width="1"/>
+          <rect x="20" y="20" width="260" height="32" rx="8" fill="#f7f9f8"/>
+          <rect x="20" y="44" width="260" height="8" fill="#f7f9f8"/>
+          <text x="36" y="40" font-family="sans-serif" font-size="8" fill="#6b7f78">From: </text>
+          <text x="60" y="40" font-family="sans-serif" font-size="8" fill="#e63946" font-weight="600">sarah@bloomflorist.com</text>
+          <text x="36" y="52" font-family="sans-serif" font-size="7" fill="#aaa">instead of sarahsmith1987@gmail.com</text>
+          <rect x="36" y="64" width="120" height="8" rx="3" fill="#e8e2e0"/>
+          <rect x="36" y="78" width="200" height="5" rx="2" fill="#f5f0ee"/>
+          <rect x="36" y="89" width="180" height="5" rx="2" fill="#f5f0ee"/>
+          <rect x="36" y="100" width="220" height="5" rx="2" fill="#f5f0ee"/>
+          <rect x="36" y="120" width="70" height="20" rx="6" fill="#fef2f3" stroke="#e63946" stroke-width="1"/>
+          <text x="71" y="133" font-family="sans-serif" font-size="7" fill="#e63946" text-anchor="middle">Reply</text>
+          <circle cx="264" cy="36" r="14" fill="#fef2f3" stroke="#fcc8cb" stroke-width="1"/>
+          <text x="264" y="40" font-family="serif" font-size="10" font-weight="600" fill="#e63946" text-anchor="middle">SB</text>
+        </svg>
+      </div>
+      <div class="gallery-info">
+        <span class="gallery-tag">Business Email</span>
+        <div class="gallery-title">Bloom Florist Email Setup</div>
+        <div class="gallery-desc">Full domain email setup for a local florist. sarah@bloomflorist.com and info@bloomflorist.com, connected to Gmail. Done in 24 hours.</div>
+        <a href="start-a-project.html" class="gallery-cta">Start a similar project <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+      </div>
+    </div>
+
+    <!-- WEBSITE 3: Sunrise Yoga -->
+    <div class="gallery-item" data-category="website">
+      <div class="preview" style="background:#fafaf7;">
+        <span class="preview-label">Website Design</span>
+        <div class="mock-browser">
+          <div class="mock-bar"><div class="mock-dot" style="background:#ff6058"></div><div class="mock-dot" style="background:#ffbd2e"></div><div class="mock-dot" style="background:#28ca41"></div><div class="mock-url"></div></div>
+          <div class="mock-body">
+            <svg width="256" height="140" viewBox="0 0 256 140">
+              <rect x="0" y="0" width="256" height="140" fill="#fafaf7"/>
+              <text x="16" y="20" font-family="serif" font-size="11" font-weight="600" fill="#2d3a34" font-style="italic">Sunrise Yoga</text>
+              <rect x="190" y="8" width="58" height="16" rx="8" fill="#4a7c6a"/>
+              <text x="219" y="19" font-family="sans-serif" font-size="6.5" fill="white" text-anchor="middle">Book a Class</text>
+              <text x="128" y="56" font-family="serif" font-size="13" font-weight="400" fill="#2d3a34" text-anchor="middle" font-style="italic">Find stillness.</text>
+              <text x="128" y="72" font-family="serif" font-size="10" fill="#4a7c6a" text-anchor="middle">Find strength. Find yourself.</text>
+              <rect x="88" y="84" width="80" height="16" rx="8" fill="#4a7c6a"/>
+              <text x="128" y="95" font-family="sans-serif" font-size="7" fill="white" text-anchor="middle">Browse Classes →</text>
+              <rect x="20" y="110" width="64" height="20" rx="6" fill="#eef5f1"/>
+              <rect x="96" y="110" width="64" height="20" rx="6" fill="#eef5f1"/>
+              <rect x="172" y="110" width="64" height="20" rx="6" fill="#eef5f1"/>
+              <text x="52" y="123" font-family="sans-serif" font-size="6.5" fill="#4a7c6a" text-anchor="middle">Morning Flow</text>
+              <text x="128" y="123" font-family="sans-serif" font-size="6.5" fill="#4a7c6a" text-anchor="middle">Gentle Yoga</text>
+              <text x="204" y="123" font-family="sans-serif" font-size="6.5" fill="#4a7c6a" text-anchor="middle">Power Vinyasa</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-info">
+        <span class="gallery-tag">Website Design</span>
+        <div class="gallery-title">Sunrise Yoga Studio</div>
+        <div class="gallery-desc">Calm, welcoming website for a yoga studio with class schedule, teacher bios, and booking form. Sage green theme, fully mobile ready.</div>
+        <a href="start-a-project.html" class="gallery-cta">Start a similar project <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+      </div>
+    </div>
+
+    <!-- CONSULTING -->
+    <div class="gallery-item" data-category="consulting">
+      <div class="preview" style="background:#f5f0ee;">
+        <span class="preview-label">Consulting</span>
+        <svg width="300" height="180" viewBox="0 0 300 180">
+          <rect x="20" y="16" width="260" height="148" rx="10" fill="white" stroke="#e8ddd9" stroke-width="1"/>
+          <rect x="20" y="16" width="260" height="36" rx="10" fill="#fef2f3"/>
+          <rect x="20" y="44" width="260" height="8" fill="#fef2f3"/>
+          <text x="40" y="38" font-family="serif" font-size="11" font-weight="600" fill="#1a0a08">Digital Action Plan</text>
+          <text x="248" y="38" font-family="sans-serif" font-size="8" fill="#e63946" text-anchor="end">Riverside Dental</text>
+          <rect x="36" y="60" width="8" height="8" rx="2" fill="#e63946"/>
+          <rect x="50" y="61" width="100" height="6" rx="3" fill="#e8ddd9"/>
+          <rect x="36" y="76" width="8" height="8" rx="2" fill="#e63946"/>
+          <rect x="50" y="77" width="140" height="6" rx="3" fill="#e8ddd9"/>
+          <rect x="36" y="92" width="8" height="8" rx="2" fill="#e63946"/>
+          <rect x="50" y="93" width="120" height="6" rx="3" fill="#e8ddd9"/>
+          <rect x="36" y="108" width="8" height="8" rx="2" fill="#fcc8cb"/>
+          <rect x="50" y="109" width="80" height="6" rx="3" fill="#f0f0f0"/>
+          <rect x="196" y="108" width="68" height="40" rx="6" fill="#fef2f3" stroke="#fcc8cb" stroke-width="1"/>
+          <text x="230" y="124" font-family="sans-serif" font-size="7" fill="#e63946" text-anchor="middle" font-weight="600">Priority</text>
+          <text x="230" y="134" font-family="sans-serif" font-size="7" fill="#e63946" text-anchor="middle" font-weight="600">Actions</text>
+          <text x="230" y="144" font-family="sans-serif" font-size="7" fill="#78665e" text-anchor="middle">3 items</text>
+        </svg>
+      </div>
+      <div class="gallery-info">
+        <span class="gallery-tag">Consulting</span>
+        <div class="gallery-title">Riverside Dental Practice</div>
+        <div class="gallery-desc">1-hour strategy session followed by a written 5-point digital action plan. Identified missing Google profile, outdated website, and no review system.</div>
+        <a href="start-a-project.html" class="gallery-cta">Start a similar project <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+      </div>
+    </div>
+
+    <!-- EMAIL 2 -->
+    <div class="gallery-item" data-category="email">
+      <div class="preview" style="background:#fdf8f4;">
+        <span class="preview-label">Business Email</span>
+        <svg width="300" height="180" viewBox="0 0 300 180">
+          <rect x="24" y="20" width="252" height="140" rx="8" fill="white" stroke="#f0e8d8" stroke-width="1"/>
+          <rect x="24" y="20" width="252" height="28" rx="8" fill="#fdf4e8"/>
+          <rect x="24" y="40" width="252" height="8" fill="#fdf4e8"/>
+          <text x="40" y="36" font-family="sans-serif" font-size="8" font-weight="500" fill="#8a6040">3 email addresses set up:</text>
+          <rect x="40" y="56" width="200" height="22" rx="6" fill="#fef2f3" stroke="#fcc8cb" stroke-width="1"/>
+          <text x="56" y="70" font-family="sans-serif" font-size="8" fill="#e63946" font-weight="500">info@riveroakslegal.com</text>
+          <rect x="40" y="84" width="200" height="22" rx="6" fill="#fef2f3" stroke="#fcc8cb" stroke-width="1"/>
+          <text x="56" y="98" font-family="sans-serif" font-size="8" fill="#e63946" font-weight="500">james@riveroakslegal.com</text>
+          <rect x="40" y="112" width="200" height="22" rx="6" fill="#fef2f3" stroke="#fcc8cb" stroke-width="1"/>
+          <text x="56" y="126" font-family="sans-serif" font-size="8" fill="#e63946" font-weight="500">support@riveroakslegal.com</text>
+          <text x="40" y="152" font-family="sans-serif" font-size="7" fill="#aaa">Connected to Outlook in under 24 hours</text>
+        </svg>
+      </div>
+      <div class="gallery-info">
+        <span class="gallery-tag">Business Email</span>
+        <div class="gallery-title">River Oaks Legal Group</div>
+        <div class="gallery-desc">Three professional email addresses configured for a small law firm. Connected to Outlook, DNS setup handled, guide provided.</div>
+        <a href="start-a-project.html" class="gallery-cta">Start a similar project <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+      </div>
+    </div>
+
+    <!-- LOGO 3: Honey Bloom -->
+    <div class="gallery-item" data-category="logo">
+      <div class="preview" style="background:#0d1f2d;">
+        <span class="preview-label" style="background:rgba(255,255,255,0.1);color:#c8d8d8;border-color:rgba(255,255,255,0.1);">Logo & Branding</span>
         <svg width="240" height="160" viewBox="0 0 240 160">
           <rect x="40" y="15" width="160" height="130" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
           <circle cx="120" cy="68" r="32" fill="none" stroke="#e8a87c" stroke-width="1.5" stroke-dasharray="3 3"/>
@@ -272,166 +340,12 @@ footer p{font-size:13px;color:var(--footer-muted);}
           <text x="120" y="96" font-family="serif" font-size="14" font-weight="700" fill="white" text-anchor="middle">BLOOM</text>
           <line x1="76" y1="102" x2="164" y2="102" stroke="rgba(232,168,124,0.3)" stroke-width="0.5"/>
           <text x="120" y="115" font-family="sans-serif" font-size="7" fill="rgba(255,255,255,0.45)" text-anchor="middle" letter-spacing="3">ARTISAN BAKERY</text>
-          <rect x="80" y="122" width="80" height="12" rx="6" fill="rgba(232,168,124,0.12)"/>
-          <text x="120" y="131" font-family="sans-serif" font-size="6" fill="#e8a87c" text-anchor="middle" letter-spacing="2">EST. 2024</text>
         </svg>
       </div>
       <div class="gallery-info">
         <span class="gallery-tag">Logo & Branding</span>
         <div class="gallery-title">Honey Bloom Bakery</div>
-        <div class="gallery-desc">Warm, artisan brand identity for a local bakery. Includes logo mark, wordmark, color palette in warm amber tones, and complete file package.</div>
-        <a href="start-a-project.html" class="gallery-cta">Start a similar project <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-      </div>
-    </div>
-
-    <!-- EMAIL 1 -->
-    <div class="gallery-item" data-category="email">
-      <div class="preview preview-email-1">
-        <span class="preview-label">Business Email</span>
-        <svg width="300" height="180" viewBox="0 0 300 180">
-          <rect x="20" y="20" width="260" height="140" rx="8" fill="white" stroke="#e2ebe7" stroke-width="1"/>
-          <rect x="20" y="20" width="260" height="32" rx="8" fill="#f7f9f8"/>
-          <rect x="20" y="44" width="260" height="8" fill="#f7f9f8"/>
-          <text x="36" y="40" font-family="sans-serif" font-size="8" fill="#6b7f78">From: </text>
-          <text x="60" y="40" font-family="sans-serif" font-size="8" fill="#16a872" font-weight="600">sarah@bloomflorist.com</text>
-          <text x="36" y="52" font-family="sans-serif" font-size="7" fill="#aaa">instead of sarahsmith1987@gmail.com</text>
-          <rect x="36" y="64" width="120" height="8" rx="3" fill="#e2ebe7"/>
-          <rect x="36" y="78" width="200" height="6" rx="3" fill="#f0f5f2"/>
-          <rect x="36" y="90" width="180" height="6" rx="3" fill="#f0f5f2"/>
-          <rect x="36" y="102" width="220" height="6" rx="3" fill="#f0f5f2"/>
-          <rect x="36" y="114" width="160" height="6" rx="3" fill="#f0f5f2"/>
-          <rect x="36" y="130" width="70" height="20" rx="6" fill="#e8f7f1" stroke="#16a872" stroke-width="1"/>
-          <text x="71" y="143" font-family="sans-serif" font-size="7" fill="#16a872" text-anchor="middle">Reply</text>
-          <circle cx="264" cy="36" r="14" fill="#e8f7f1" stroke="#c8ead9" stroke-width="1"/>
-          <text x="264" y="40" font-family="serif" font-size="10" font-weight="600" fill="#16a872" text-anchor="middle">SB</text>
-        </svg>
-      </div>
-      <div class="gallery-info">
-        <span class="gallery-tag">Business Email</span>
-        <div class="gallery-title">Bloom Florist Email Setup</div>
-        <div class="gallery-desc">Full domain email configuration for a local florist. Set up sarah@bloomflorist.com and info@bloomflorist.com, connected to Gmail. Done in under 24 hours.</div>
-        <a href="start-a-project.html" class="gallery-cta">Start a similar project <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-      </div>
-    </div>
-
-    <!-- WEBSITE 3: Fitness trainer -->
-    <div class="gallery-item" data-category="website">
-      <div class="preview preview-web-3">
-        <span class="preview-label">Website Design</span>
-        <div class="mock-browser">
-          <div class="mock-browser-bar">
-            <div class="mock-dot" style="background:#ff6058"></div>
-            <div class="mock-dot" style="background:#ffbd2e"></div>
-            <div class="mock-dot" style="background:#28ca41"></div>
-            <div class="mock-url"></div>
-          </div>
-          <div class="mock-body">
-            <svg width="256" height="140" viewBox="0 0 256 140">
-              <rect x="0" y="0" width="256" height="140" fill="#f8fafb"/>
-              <rect x="0" y="0" width="256" height="32" fill="white" stroke-width="0"/>
-              <text x="16" y="20" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a2420">FORM FITNESS</text>
-              <rect x="190" y="8" width="56" height="16" rx="8" fill="#1a2420"/>
-              <text x="218" y="19" font-family="sans-serif" font-size="6.5" fill="white" text-anchor="middle">Book Session</text>
-              <rect x="0" y="32" width="120" height="108" fill="#e8f0f5"/>
-              <rect x="0" y="32" width="120" height="108" fill="#d8e8f0"/>
-              <text x="60" y="80" font-family="sans-serif" font-size="24" fill="#b0c8d8" text-anchor="middle" opacity="0.6">💪</text>
-              <rect x="128" y="38" width="112" height="96" fill="white"/>
-              <text x="184" y="58" font-family="serif" font-size="11" font-weight="700" fill="#1a2420" text-anchor="middle">Train Smarter.</text>
-              <text x="184" y="72" font-family="serif" font-size="9" font-style="italic" fill="#4a9abe" text-anchor="middle">Live Stronger.</text>
-              <rect x="148" y="80" width="72" height="5" rx="2" fill="#e8e8e8"/>
-              <rect x="148" y="90" width="56" height="5" rx="2" fill="#e8e8e8"/>
-              <rect x="148" y="104" width="60" height="18" rx="9" fill="#1a2420"/>
-              <text x="178" y="115" font-family="sans-serif" font-size="6.5" fill="white" text-anchor="middle">Start Training</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="gallery-info">
-        <span class="gallery-tag">Website Design</span>
-        <div class="gallery-title">Form Fitness Trainer</div>
-        <div class="gallery-desc">Personal trainer website with session booking form, client testimonials section, and program pricing. Mobile-optimized and SEO-ready.</div>
-        <a href="start-a-project.html" class="gallery-cta">Start a similar project <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-      </div>
-    </div>
-
-    <!-- LOGO 3: Landscaping -->
-    <div class="gallery-item" data-category="logo">
-      <div class="preview preview-logo-3">
-        <span class="preview-label">Logo & Branding</span>
-        <svg width="240" height="160" viewBox="0 0 240 160">
-          <rect x="60" y="20" width="120" height="120" rx="60" fill="#e8f7f1" stroke="#c8ead9" stroke-width="1.5"/>
-          <ellipse cx="120" cy="88" rx="36" ry="20" fill="#16a872" opacity="0.15"/>
-          <path d="M120 88 Q100 60 84 68 Q90 50 120 46 Q150 50 156 68 Q140 60 120 88Z" fill="#16a872"/>
-          <path d="M120 88 Q104 72 92 78 Q96 64 120 62 Q144 64 148 78 Q136 72 120 88Z" fill="#128a5e"/>
-          <rect x="117" y="88" width="6" height="20" rx="3" fill="#0d6644"/>
-          <text x="120" y="125" font-family="serif" font-size="12" font-weight="700" fill="#1a2420" text-anchor="middle">GreenEdge</text>
-          <text x="120" y="136" font-family="sans-serif" font-size="7" fill="#6b7f78" text-anchor="middle" letter-spacing="2">LANDSCAPING</text>
-        </svg>
-      </div>
-      <div class="gallery-info">
-        <span class="gallery-tag">Logo & Branding</span>
-        <div class="gallery-title">GreenEdge Landscaping</div>
-        <div class="gallery-desc">Clean, nature-inspired logo for a local landscaping company. Fresh greens, simple mark, professional wordmark. Full brand file package delivered.</div>
-        <a href="start-a-project.html" class="gallery-cta">Start a similar project <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-      </div>
-    </div>
-
-    <!-- CONSULTING -->
-    <div class="gallery-item" data-category="consulting">
-      <div class="preview preview-consult-1">
-        <span class="preview-label">Digital Consulting</span>
-        <svg width="300" height="180" viewBox="0 0 300 180">
-          <rect x="20" y="16" width="260" height="148" rx="10" fill="white" stroke="#e2ebe7" stroke-width="1"/>
-          <rect x="20" y="16" width="260" height="36" rx="10" fill="#e8f7f1"/>
-          <rect x="20" y="44" width="260" height="8" fill="#e8f7f1"/>
-          <text x="40" y="38" font-family="serif" font-size="10" font-weight="600" fill="#1a2420">Digital Action Plan</text>
-          <text x="240" y="38" font-family="sans-serif" font-size="8" fill="#16a872" text-anchor="end">Riverside Dental</text>
-          <rect x="36" y="60" width="8" height="8" rx="2" fill="#16a872"/>
-          <rect x="50" y="61" width="100" height="6" rx="3" fill="#e2ebe7"/>
-          <rect x="36" y="76" width="8" height="8" rx="2" fill="#16a872"/>
-          <rect x="50" y="77" width="140" height="6" rx="3" fill="#e2ebe7"/>
-          <rect x="36" y="92" width="8" height="8" rx="2" fill="#16a872"/>
-          <rect x="50" y="93" width="120" height="6" rx="3" fill="#e2ebe7"/>
-          <rect x="36" y="108" width="8" height="8" rx="2" fill="#c8ead9"/>
-          <rect x="50" y="109" width="80" height="6" rx="3" fill="#f0f0f0"/>
-          <rect x="36" y="124" width="8" height="8" rx="2" fill="#c8ead9"/>
-          <rect x="50" y="125" width="110" height="6" rx="3" fill="#f0f0f0"/>
-          <rect x="196" y="108" width="68" height="40" rx="6" fill="#e8f7f1" stroke="#c8ead9" stroke-width="1"/>
-          <text x="230" y="124" font-family="sans-serif" font-size="7" fill="#16a872" text-anchor="middle" font-weight="600">Priority</text>
-          <text x="230" y="134" font-family="sans-serif" font-size="7" fill="#16a872" text-anchor="middle" font-weight="600">Actions</text>
-          <text x="230" y="144" font-family="sans-serif" font-size="7" fill="#6b7f78" text-anchor="middle">3 items</text>
-        </svg>
-      </div>
-      <div class="gallery-info">
-        <span class="gallery-tag">Digital Consulting</span>
-        <div class="gallery-title">Riverside Dental Practice</div>
-        <div class="gallery-desc">1-hour strategy session followed by a written 5-point digital action plan. Identified missing Google Business profile, outdated website, and no patient review system.</div>
-        <a href="start-a-project.html" class="gallery-cta">Start a similar project <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-      </div>
-    </div>
-
-    <!-- EMAIL 2 -->
-    <div class="gallery-item" data-category="email">
-      <div class="preview preview-email-2">
-        <span class="preview-label">Business Email</span>
-        <svg width="300" height="180" viewBox="0 0 300 180">
-          <rect x="24" y="20" width="252" height="140" rx="8" fill="white" stroke="#f0e8d8" stroke-width="1"/>
-          <rect x="24" y="20" width="252" height="28" rx="8" fill="#fdf4e8"/>
-          <rect x="24" y="40" width="252" height="8" fill="#fdf4e8"/>
-          <text x="40" y="36" font-family="sans-serif" font-size="8" font-weight="500" fill="#8a6040">3 email addresses set up:</text>
-          <rect x="40" y="56" width="200" height="22" rx="6" fill="#fdf4e8" stroke="#f0e0c0" stroke-width="1"/>
-          <text x="56" y="70" font-family="sans-serif" font-size="8" fill="#16a872" font-weight="500">info@riveroakslegal.com</text>
-          <rect x="40" y="84" width="200" height="22" rx="6" fill="#fdf4e8" stroke="#f0e0c0" stroke-width="1"/>
-          <text x="56" y="98" font-family="sans-serif" font-size="8" fill="#16a872" font-weight="500">james@riveroakslegal.com</text>
-          <rect x="40" y="112" width="200" height="22" rx="6" fill="#fdf4e8" stroke="#f0e0c0" stroke-width="1"/>
-          <text x="56" y="126" font-family="sans-serif" font-size="8" fill="#16a872" font-weight="500">support@riveroakslegal.com</text>
-          <text x="40" y="152" font-family="sans-serif" font-size="7" fill="#aaa">Connected to Outlook in under 24 hours</text>
-        </svg>
-      </div>
-      <div class="gallery-info">
-        <span class="gallery-tag">Business Email</span>
-        <div class="gallery-title">River Oaks Legal Group</div>
-        <div class="gallery-desc">Three professional email addresses configured for a small law firm. Connected to Outlook, DNS fully configured, and a setup guide provided for the client.</div>
+        <div class="gallery-desc">Warm artisan brand identity with circular emblem, warm amber tones, custom font pairing, and complete light/dark file package.</div>
         <a href="start-a-project.html" class="gallery-cta">Start a similar project <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
       </div>
     </div>
@@ -439,47 +353,25 @@ footer p{font-size:13px;color:var(--footer-muted);}
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section reveal">
   <h2>Ready to start your <em>own project?</em></h2>
-  <p>Every project above started with a single conversation. Let's talk about yours.</p>
+  <p>Every project above started with a single message. Let's talk about yours.</p>
   <a href="start-a-project.html" class="btn-primary">Start a Project <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
 </section>
 
 <footer>
   <div class="footer-bottom">
-    <p>© 2025 Jeego IT & Consulting Services. All rights reserved.</p>
-    <p>mohamed@jeegoit.com   |   +1 614-601-2322</p>
+    <p>© 2025 Kulan Studio. All rights reserved.</p>
+    <p>mohamed@kulanstudio.com   |   +1 614-601-2322</p>
   </div>
 </footer>
 
 <script>
-  // Filter functionality
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const items = document.querySelectorAll('.gallery-item');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      items.forEach(item => {
-        if(filter === 'all' || item.dataset.category === filter) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
-      });
-    });
-  });
-
-  // Scroll reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if(entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 80);
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  const filterBtns=document.querySelectorAll('.filter-btn');
+  const items=document.querySelectorAll('.gallery-item');
+  filterBtns.forEach(btn=>{btn.addEventListener('click',()=>{filterBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;items.forEach(item=>{if(f==='all'||item.dataset.category===f){item.classList.remove('hidden');}else{item.classList.add('hidden');}});});});
+  const obs=new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting)setTimeout(()=>en.target.classList.add('visible'),i*90);});},{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>

@@ -3,150 +3,187 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jeego IT & Consulting Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Kulan Studio | Websites · Logos · Digital Presence</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --green: #16a872;
-  --green-light: #e8f7f1;
-  --green-mid: #c8ead9;
+  --red: #e63946;
+  --red-light: #fef2f3;
+  --red-mid: #fcc8cb;
+  --dark: #1a0a08;
+  --dark2: #2a1210;
   --bg: #ffffff;
-  --bg2: #f7f9f8;
-  --bg3: #f0f5f2;
-  --text: #1a2420;
-  --muted: #6b7f78;
-  --border: #e2ebe7;
-  --footer-bg: #111c18;
-  --footer-text: #c8d8d2;
-  --footer-muted: #6b8a80;
-  --radius: 14px;
-  --radius-sm: 8px;
+  --bg2: #fafaf9;
+  --bg3: #f5f2f0;
+  --text: #1a0a08;
+  --muted: #78665e;
+  --border: #e8ddd9;
+  --footer-bg: #120705;
+  --footer-muted: #7a4a3e;
+  --footer-text: #e8ccc8;
+  --radius: 16px;
+  --radius-sm: 10px;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Instrument Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
 
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 60px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.nav-logo-icon { width: 34px; height: 34px; }
-.nav-brand { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 2px; color: var(--text); }
-.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
-.nav-links a { font-size: 14px; font-weight: 400; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.nav-links a:hover { color: var(--text); }
-.nav-cta { background: var(--text) !important; color: #fff !important; font-weight: 500 !important; padding: 10px 22px; border-radius: var(--radius-sm); }
-.nav-cta:hover { background: var(--green) !important; color: #fff !important; }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 64px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-mark{display:grid;grid-template-columns:1fr 0.5fr;grid-template-rows:1fr 0.68fr;gap:3px;width:32px;height:28px;}
+.nm1{background:var(--red);border-radius:4px;}
+.nm2{background:var(--red);border-radius:4px;opacity:0.35;}
+.nm3{background:var(--red);border-radius:4px;opacity:0.35;}
+.nm4{background:var(--red);border-radius:4px;}
+.nav-wordmark{font-family:'DM Serif Display',serif;font-size:20px;color:var(--dark);letter-spacing:-0.3px;}
+.nav-wordmark span{color:var(--red);}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
+.nav-links a{font-size:14px;font-weight:400;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{background:var(--dark)!important;color:#fff!important;font-weight:500!important;padding:11px 24px;border-radius:var(--radius-sm);transition:background 0.2s!important;}
+.nav-cta:hover{background:var(--red)!important;}
 
-.hero { min-height: 100vh; display: flex; align-items: center; padding: 130px 60px 80px; position: relative; overflow: hidden; background: var(--bg); }
-.hero-blob { position: absolute; top: -140px; right: -100px; width: 640px; height: 640px; background: var(--green-light); border-radius: 50% 40% 60% 30% / 50% 60% 40% 50%; opacity: 0.65; pointer-events: none; }
-.hero-blob2 { position: absolute; bottom: -120px; left: -80px; width: 440px; height: 440px; background: var(--green-light); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; opacity: 0.35; pointer-events: none; }
-.hero-content { max-width: 700px; position: relative; z-index: 2; animation: fadeUp 0.7s ease both; }
-.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--green-light); border: 1px solid var(--green-mid); border-radius: 100px; padding: 6px 16px; font-size: 13px; font-weight: 500; color: var(--green); margin-bottom: 28px; }
-.hero-badge-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
-.hero h1 { font-family: 'Fraunces', serif; font-size: clamp(40px, 5.5vw, 70px); font-weight: 600; line-height: 1.1; letter-spacing: -0.5px; color: var(--text); margin-bottom: 24px; }
-.hero h1 em { font-style: italic; font-weight: 300; color: var(--green); }
-.hero > div > p { font-size: 18px; font-weight: 300; line-height: 1.8; color: var(--muted); max-width: 500px; margin-bottom: 44px; }
-.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-.btn-primary { background: var(--green); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 500; padding: 14px 28px; border-radius: var(--radius-sm); border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s, transform 0.2s; }
-.btn-primary:hover { background: #128a5e; transform: translateY(-1px); }
-.btn-outline { background: transparent; color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 400; padding: 14px 28px; border-radius: var(--radius-sm); border: 1.5px solid var(--border); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s, transform 0.2s; }
-.btn-outline:hover { border-color: var(--green); color: var(--green); transform: translateY(-1px); }
-.hero-stats { position: absolute; right: 60px; bottom: 80px; display: flex; gap: 48px; z-index: 2; animation: fadeUp 0.7s 0.2s ease both; }
-.stat-item { text-align: right; }
-.stat-number { font-family: 'Fraunces', serif; font-size: 38px; font-weight: 600; color: var(--green); line-height: 1; }
-.stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+/* HERO */
+.hero{min-height:100vh;padding:140px 64px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:var(--red-light);border-radius:50%;opacity:0.7;pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-150px;left:-100px;width:500px;height:500px;background:var(--red-light);border-radius:50%;opacity:0.4;pointer-events:none;}
+.hero-content{position:relative;z-index:2;animation:fadeUp 0.7s ease both;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--red-light);border:1px solid var(--red-mid);border-radius:100px;padding:7px 18px;font-size:13px;font-weight:500;color:var(--red);margin-bottom:28px;}
+.hero-tag-dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:pulse 2s infinite;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(44px,5.5vw,76px);line-height:1.05;letter-spacing:-0.5px;color:var(--dark);margin-bottom:24px;}
+.hero h1 em{font-style:italic;color:var(--red);}
+.hero-desc{font-size:18px;font-weight:300;color:var(--muted);line-height:1.8;max-width:480px;margin-bottom:44px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{background:var(--red);color:#fff;font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:500;padding:15px 30px;border-radius:var(--radius-sm);border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:background 0.2s,transform 0.2s;}
+.btn-primary:hover{background:#c62d3a;transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:var(--text);font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:400;padding:15px 30px;border-radius:var(--radius-sm);border:1.5px solid var(--border);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:border-color 0.2s,color 0.2s;}
+.btn-ghost:hover{border-color:var(--red);color:var(--red);}
+.hero-visual{position:relative;z-index:2;animation:fadeUp 0.7s 0.15s ease both;}
+.hero-card{background:var(--dark);border-radius:24px;overflow:hidden;}
+.hero-card-top{padding:36px 36px 28px;border-bottom:1px solid rgba(255,255,255,0.06);}
+.hero-card-top h3{font-family:'DM Serif Display',serif;font-size:22px;color:#fff;margin-bottom:8px;}
+.hero-card-top p{font-size:14px;color:rgba(255,255,255,0.4);font-weight:300;}
+.hero-card-services{padding:24px 36px;display:flex;flex-direction:column;gap:12px;}
+.hero-service{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;}
+.hero-service-name{font-size:15px;font-weight:400;color:#fff;}
+.hero-service-price{font-family:'DM Serif Display',serif;font-size:18px;color:var(--red);}
+.hero-card-footer{padding:20px 36px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.06);}
+.hero-card-footer p{font-size:13px;color:rgba(255,255,255,0.3);}
+.hero-stat-row{display:flex;gap:32px;}
+.hero-stat-num{font-family:'DM Serif Display',serif;font-size:28px;color:var(--red);line-height:1;}
+.hero-stat-label{font-size:11px;color:rgba(255,255,255,0.3);margin-top:3px;}
 
-section { padding: 100px 60px; }
-.section-label { font-size: 12px; font-weight: 500; letter-spacing: 3px; color: var(--green); text-transform: uppercase; margin-bottom: 14px; }
-.section-title { font-family: 'Fraunces', serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 600; line-height: 1.2; margin-bottom: 16px; color: var(--text); }
-.section-title em { font-style: italic; font-weight: 300; color: var(--green); }
-.section-sub { font-size: 17px; font-weight: 300; color: var(--muted); max-width: 520px; line-height: 1.8; margin-bottom: 56px; }
+/* SECTIONS */
+section{padding:100px 64px;}
+.sec-label{font-size:12px;font-weight:500;letter-spacing:4px;color:var(--red);text-transform:uppercase;margin-bottom:14px;}
+.sec-title{font-family:'DM Serif Display',serif;font-size:clamp(32px,4vw,52px);line-height:1.1;margin-bottom:18px;color:var(--dark);}
+.sec-title em{font-style:italic;color:var(--red);}
+.sec-sub{font-size:17px;font-weight:300;color:var(--muted);max-width:520px;line-height:1.8;margin-bottom:60px;}
 
-#services { background: var(--bg2); }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 20px; }
-.service-card { background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 32px 28px; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; }
-.service-card:hover { border-color: var(--green); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(22,168,114,0.08); }
-.service-icon { width: 48px; height: 48px; background: var(--green-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-.service-icon svg { width: 22px; height: 22px; }
-.service-card h3 { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; margin-bottom: 10px; color: var(--text); }
-.service-card p { font-size: 14px; font-weight: 300; color: var(--muted); line-height: 1.75; margin-bottom: 20px; }
-.service-price { font-size: 13px; font-weight: 500; color: var(--green); background: var(--green-light); padding: 4px 12px; border-radius: 100px; display: inline-block; }
+/* SERVICES */
+#services{background:var(--bg2);}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.svc{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius);padding:32px;transition:all 0.3s;position:relative;overflow:hidden;}
+.svc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.svc:hover{border-color:var(--red-mid);transform:translateY(-4px);box-shadow:0 16px 48px rgba(230,57,70,0.08);}
+.svc:hover::before{transform:scaleX(1);}
+.svc-icon{width:52px;height:52px;background:var(--red-light);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;}
+.svc-icon svg{width:24px;height:24px;}
+.svc h3{font-family:'DM Serif Display',serif;font-size:22px;margin-bottom:10px;color:var(--dark);}
+.svc p{font-size:14px;font-weight:300;color:var(--muted);line-height:1.75;margin-bottom:20px;}
+.svc-price{font-size:13px;font-weight:500;color:var(--red);background:var(--red-light);padding:5px 14px;border-radius:100px;display:inline-block;}
 
-#why { background: var(--bg); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.why-features { display: flex; flex-direction: column; gap: 28px; }
-.why-feature { display: flex; gap: 18px; align-items: flex-start; }
-.why-feature-num { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 300; color: var(--green-mid); line-height: 1.1; flex-shrink: 0; width: 36px; }
-.why-feature h4 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
-.why-feature p { font-size: 14px; font-weight: 300; color: var(--muted); line-height: 1.75; }
-.why-visual { background: var(--green-light); border-radius: 24px; padding: 48px 40px; text-align: center; border: 1.5px solid var(--green-mid); }
-.why-visual-icon { width: 80px; height: 80px; margin: 0 auto 24px; }
-.why-visual h3 { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; margin-bottom: 12px; color: var(--text); }
-.why-visual p { font-size: 15px; color: var(--muted); line-height: 1.75; font-weight: 300; }
-.green-pill { display: inline-block; margin-top: 20px; background: var(--green); border-radius: 100px; padding: 8px 20px; font-size: 12px; letter-spacing: 1.5px; color: #fff; font-weight: 500; }
+/* WHY */
+#why{background:var(--bg);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.why-feats{display:flex;flex-direction:column;gap:20px;}
+.why-feat{display:flex;gap:18px;padding:22px;background:var(--bg2);border-radius:var(--radius);border:1.5px solid var(--border);transition:border-color 0.2s;}
+.why-feat:hover{border-color:var(--red-mid);}
+.why-feat-num{font-family:'DM Serif Display',serif;font-size:32px;color:var(--red-mid);line-height:1;flex-shrink:0;padding-top:2px;}
+.why-feat h4{font-family:'DM Serif Display',serif;font-size:18px;margin-bottom:5px;color:var(--dark);}
+.why-feat p{font-size:14px;font-weight:300;color:var(--muted);line-height:1.7;}
+.why-visual{background:var(--dark);border-radius:24px;padding:52px 44px;text-align:center;}
+.why-mark{display:grid;grid-template-columns:1fr 0.5fr;grid-template-rows:1fr 0.68fr;gap:6px;width:80px;height:70px;margin:0 auto 28px;}
+.wm1{background:var(--red);border-radius:8px;}
+.wm2{background:var(--red);border-radius:8px;opacity:0.35;}
+.wm3{background:var(--red);border-radius:8px;opacity:0.35;}
+.wm4{background:var(--red);border-radius:8px;}
+.why-visual h3{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;margin-bottom:12px;}
+.why-visual p{font-size:15px;color:rgba(255,255,255,0.45);line-height:1.75;font-weight:300;}
+.why-pill{display:inline-block;margin-top:24px;background:var(--red);color:#fff;font-size:12px;font-weight:500;letter-spacing:2px;padding:10px 24px;border-radius:100px;}
 
-#how { background: var(--bg2); }
-.steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; position: relative; }
-.steps::before { content: ''; position: absolute; top: 31px; left: calc(16.66% + 20px); right: calc(16.66% + 20px); height: 1.5px; background: var(--green-mid); }
-.step { text-align: center; padding: 0 16px; }
-.step-num { width: 62px; height: 62px; background: var(--bg); border: 2px solid var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: var(--green); position: relative; z-index: 1; }
-.step h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; margin-bottom: 10px; color: var(--text); }
-.step p { font-size: 14px; font-weight: 300; color: var(--muted); line-height: 1.75; }
+/* HOW */
+#how{background:var(--bg3);text-align:center;}
+#how .sec-title{margin:0 auto;}
+#how .sec-sub{margin:0 auto 64px;}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;position:relative;max-width:860px;margin:0 auto;}
+.steps::before{content:'';position:absolute;top:36px;left:calc(16.66% + 20px);right:calc(16.66% + 20px);height:1.5px;background:var(--red-mid);}
+.step{text-align:center;}
+.step-num{width:72px;height:72px;background:var(--bg);border:2.5px solid var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;font-family:'DM Serif Display',serif;font-size:26px;color:var(--red);position:relative;z-index:1;}
+.step h3{font-family:'DM Serif Display',serif;font-size:19px;margin-bottom:10px;color:var(--dark);}
+.step p{font-size:14px;font-weight:300;color:var(--muted);line-height:1.75;}
 
-#maintenance { background: var(--bg3); }
-.maintenance-intro { text-align: center; max-width: 580px; margin: 0 auto 56px; }
-.plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 20px; max-width: 860px; margin: 0 auto; }
-.plan-card { background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 32px 28px; text-align: center; position: relative; transition: border-color 0.3s, transform 0.3s; }
-.plan-card:hover { transform: translateY(-3px); border-color: var(--green); }
-.plan-card.popular { border-color: var(--green); }
-.popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--green); color: #fff; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; padding: 4px 14px; border-radius: 100px; text-transform: uppercase; white-space: nowrap; }
-.plan-name { font-size: 12px; font-weight: 500; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 10px; }
-.plan-price { font-family: 'Fraunces', serif; font-size: 44px; font-weight: 600; color: var(--text); line-height: 1; }
-.plan-price span { font-size: 16px; font-weight: 300; color: var(--muted); }
-.plan-divider { height: 1.5px; background: var(--border); margin: 18px 0; }
-.plan-desc { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 24px; font-weight: 300; }
-.plan-btn { display: block; background: transparent; border: 1.5px solid var(--border); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; padding: 12px 24px; border-radius: var(--radius-sm); cursor: pointer; text-decoration: none; transition: all 0.2s; }
-.plan-btn:hover { border-color: var(--green); color: var(--green); }
-.plan-card.popular .plan-btn { background: var(--green); color: #fff; border-color: var(--green); }
-.plan-card.popular .plan-btn:hover { background: #128a5e; }
+/* MAINTENANCE */
+#maintenance{background:var(--bg);}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:880px;margin:0 auto;}
+.plan{background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--radius);padding:34px;text-align:center;position:relative;transition:all 0.3s;}
+.plan:hover{transform:translateY(-3px);}
+.plan.pop{border-color:var(--red);background:var(--bg);}
+.pop-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:10px;font-weight:600;letter-spacing:2px;padding:5px 16px;border-radius:100px;text-transform:uppercase;white-space:nowrap;}
+.plan-name{font-size:12px;font-weight:500;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:10px;}
+.plan-price{font-family:'DM Serif Display',serif;font-size:48px;color:var(--dark);line-height:1;}
+.plan-price span{font-size:16px;font-weight:300;color:var(--muted);}
+.plan-divider{height:1.5px;background:var(--border);margin:18px 0;}
+.plan-desc{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:26px;font-weight:300;}
+.plan-btn{display:block;background:transparent;border:1.5px solid var(--border);color:var(--text);font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;padding:13px;border-radius:var(--radius-sm);cursor:pointer;text-decoration:none;transition:all 0.2s;}
+.plan-btn:hover{border-color:var(--red);color:var(--red);}
+.plan.pop .plan-btn{background:var(--red);color:#fff;border-color:var(--red);}
+.plan.pop .plan-btn:hover{background:#c62d3a;}
 
-#contact { background: var(--bg); text-align: center; }
-.contact-options { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-.contact-card { background: var(--bg2); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 24px 32px; text-decoration: none; color: var(--text); display: flex; align-items: center; gap: 14px; font-size: 15px; transition: all 0.2s; min-width: 220px; }
-.contact-card:hover { border-color: var(--green); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22,168,114,0.08); }
-.contact-card-icon { width: 40px; height: 40px; background: var(--green-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.contact-card-text small { display: block; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); margin-bottom: 3px; font-weight: 500; }
+/* CONTACT */
+#contact{background:var(--dark);text-align:center;}
+#contact .sec-label{color:var(--red);}
+#contact .sec-title{color:#fff;margin:0 auto 16px;}
+#contact .sec-sub{color:rgba(255,255,255,0.4);margin:0 auto 56px;}
+.contact-cards{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+.contact-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:26px 36px;text-decoration:none;transition:all 0.2s;min-width:220px;}
+.contact-card:hover{border-color:rgba(230,57,70,0.4);background:rgba(230,57,70,0.06);}
+.contact-card-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:6px;font-weight:500;}
+.contact-card-value{font-size:16px;color:#fff;}
 
-footer { background: var(--footer-bg); padding: 56px 60px 32px; }
-.footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 48px; gap: 40px; }
-.footer-brand-block .footer-brand { font-size: 16px; font-weight: 600; letter-spacing: 2px; color: #fff; display: block; margin-bottom: 8px; }
-.footer-brand-block p { font-size: 13px; color: var(--footer-muted); }
-.footer-social { display: flex; gap: 10px; margin-top: 20px; }
-.social-btn { width: 38px; height: 38px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.2s; }
-.social-btn:hover { background: rgba(22,168,114,0.2); border-color: var(--green); }
-.social-btn svg { width: 16px; height: 16px; fill: var(--footer-muted); }
-.footer-links { display: flex; gap: 56px; }
-.footer-links-col h4 { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
-.footer-links-col a { display: block; font-size: 14px; color: var(--footer-muted); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
-.footer-links-col a:hover { color: var(--footer-text); }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 24px; display: flex; justify-content: space-between; }
-.footer-bottom p { font-size: 13px; color: var(--footer-muted); }
+/* FOOTER */
+footer{background:var(--footer-bg);padding:56px 64px 32px;}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:48px;gap:40px;}
+.footer-brand{font-family:'DM Serif Display',serif;font-size:22px;color:#fff;display:block;margin-bottom:8px;}
+.footer-brand span{color:var(--red);font-style:italic;}
+.footer-desc{font-size:13px;color:var(--footer-muted);max-width:220px;line-height:1.7;}
+.footer-social{display:flex;gap:10px;margin-top:20px;}
+.social-btn{width:38px;height:38px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.2s;}
+.social-btn:hover{background:rgba(230,57,70,0.15);border-color:rgba(230,57,70,0.3);}
+.social-btn svg{width:16px;height:16px;fill:var(--footer-muted);}
+.footer-links{display:flex;gap:56px;}
+.footer-col h4{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:16px;}
+.footer-col a{display:block;font-size:14px;color:var(--footer-muted);text-decoration:none;margin-bottom:10px;transition:color 0.2s;}
+.footer-col a:hover{color:var(--footer-text);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;justify-content:space-between;}
+.footer-bottom p{font-size:13px;color:var(--footer-muted);}
 
-@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
 
-@media (max-width: 900px) {
-  nav { padding: 16px 24px; }
-  .nav-links { display: none; }
-  section { padding: 72px 24px; }
-  .hero { padding: 110px 24px 60px; }
-  .hero-stats { position: static; margin-top: 48px; flex-wrap: wrap; gap: 28px; justify-content: flex-start; }
-  #why { grid-template-columns: 1fr; gap: 48px; }
-  .steps { grid-template-columns: 1fr; }
-  .steps::before { display: none; }
-  .footer-top { flex-direction: column; }
-  .footer-links { gap: 32px; flex-wrap: wrap; }
-  .footer-bottom { flex-direction: column; gap: 8px; }
+@media(max-width:960px){
+  nav{padding:16px 24px;}.nav-links{display:none;}
+  section{padding:72px 24px;}
+  .hero{grid-template-columns:1fr;padding:120px 24px 60px;}
+  .hero-visual{display:none;}
+  #why{grid-template-columns:1fr;gap:40px;}
+  .steps{grid-template-columns:1fr;}.steps::before{display:none;}
+  .plans{grid-template-columns:1fr;}
+  .footer-top{flex-direction:column;}
+  .footer-links{gap:32px;flex-wrap:wrap;}
+  .footer-bottom{flex-direction:column;gap:8px;}
 }
 </style>
 </head>
@@ -154,162 +191,144 @@ footer { background: var(--footer-bg); padding: 56px 60px 32px; }
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <svg class="nav-logo-icon" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="0" width="44" height="44" rx="9" fill="#e8f7f1" stroke="#16a872" stroke-width="1.5"/>
-      <line x1="9" y1="22" x2="18" y2="22" stroke="#16a872" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="26" y1="22" x2="35" y2="22" stroke="#16a872" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="22" y1="9" x2="22" y2="18" stroke="#16a872" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="22" y1="26" x2="22" y2="35" stroke="#16a872" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="13" y1="13" x2="18" y2="18" stroke="#16a872" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-      <line x1="26" y1="26" x2="31" y2="31" stroke="#16a872" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-      <line x1="31" y1="13" x2="26" y2="18" stroke="#16a872" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-      <line x1="13" y1="31" x2="18" y2="26" stroke="#16a872" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-      <circle cx="22" cy="22" r="4" fill="#e8f7f1" stroke="#16a872" stroke-width="1.5"/>
-      <circle cx="22" cy="22" r="1.8" fill="#16a872"/>
-      <circle cx="9" cy="22" r="1.8" fill="#16a872"/>
-      <circle cx="35" cy="22" r="1.8" fill="#16a872"/>
-      <circle cx="22" cy="9" r="1.8" fill="#16a872"/>
-      <circle cx="22" cy="35" r="1.8" fill="#16a872"/>
-    </svg>
-    <span class="nav-brand">JEEGO IT</span>
+    <div class="nav-mark"><div class="nm1"></div><div class="nm2"></div><div class="nm3"></div><div class="nm4"></div></div>
+    <span class="nav-wordmark">Kulan <span>Studio</span></span>
   </a>
   <ul class="nav-links">
     <li><a href="services.html">Services</a></li>
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="#why">Why Us</a></li>
-    <li><a href="#how">How It Works</a></li>
     <li><a href="start-a-project.html" class="nav-cta">Start a Project</a></li>
   </ul>
 </nav>
 
 <section class="hero">
-  <div class="hero-blob"></div>
-  <div class="hero-blob2"></div>
   <div class="hero-content">
-    <div class="hero-badge"><span class="hero-badge-dot"></span>Websites · Branding · Digital Presence</div>
-    <h1>Your business,<br><em>online and looking</em><br>professional.</h1>
-    <p>Jeego IT helps small businesses get online, look credible, and attract more clients. Fast turnaround, fair pricing, personal service.</p>
-    <div class="hero-actions">
+    <div class="hero-tag"><span class="hero-tag-dot"></span>Websites · Logos · Digital Presence</div>
+    <h1>Your business,<br><em>online and looking</em><br>the part.</h1>
+    <p class="hero-desc">Kulan Studio helps small businesses get online, look credible, and attract more clients. Fast turnaround, fair pricing, personal service.</p>
+    <div class="hero-btns">
       <a href="start-a-project.html" class="btn-primary">Start a project <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-      <a href="services.html" class="btn-outline">See our services</a>
+      <a href="services.html" class="btn-ghost">See our services</a>
     </div>
   </div>
-  <div class="hero-stats">
-    <div class="stat-item"><div class="stat-number">4+</div><div class="stat-label">Services</div></div>
-    <div class="stat-item"><div class="stat-number">48h</div><div class="stat-label">Avg. delivery</div></div>
-    <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Satisfaction</div></div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hero-card-top">
+        <h3>What we build for you</h3>
+        <p>Delivered in 48 hours, every time.</p>
+      </div>
+      <div class="hero-card-services">
+        <div class="hero-service"><span class="hero-service-name">Website Design</span><span class="hero-service-price">$599</span></div>
+        <div class="hero-service"><span class="hero-service-name">Logo & Branding</span><span class="hero-service-price">$110</span></div>
+        <div class="hero-service"><span class="hero-service-name">Business Email Setup</span><span class="hero-service-price">$99</span></div>
+        <div class="hero-service"><span class="hero-service-name">Digital Consulting</span><span class="hero-service-price">$200</span></div>
+      </div>
+      <div class="hero-card-footer">
+        <p>kulanstudio.com</p>
+        <div class="hero-stat-row">
+          <div><div class="hero-stat-num">48h</div><div class="hero-stat-label">delivery</div></div>
+          <div><div class="hero-stat-num">100%</div><div class="hero-stat-label">satisfaction</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="services">
   <div class="reveal">
-    <p class="section-label">What we offer</p>
-    <h2 class="section-title">Everything your small business<br>needs to look <em>credible online.</em></h2>
-    <p class="section-sub">We handle the digital side so you can focus on running your business.</p>
+    <p class="sec-label">What we offer</p>
+    <h2 class="sec-title">Everything your small business<br>needs to look <em>credible online.</em></h2>
+    <p class="sec-sub">We handle the digital side so you can focus on running your business.</p>
   </div>
   <div class="services-grid reveal">
-    <div class="service-card">
-      <div class="service-icon"><svg fill="none" viewBox="0 0 24 24" stroke="#16a872" stroke-width="1.8"><rect x="3" y="3" width="18" height="14" rx="2"/><path stroke-linecap="round" d="M8 21h8M12 17v4"/></svg></div>
+    <div class="svc">
+      <div class="svc-icon"><svg fill="none" viewBox="0 0 24 24" stroke="#e63946" stroke-width="1.8"><rect x="3" y="3" width="18" height="14" rx="2"/><path stroke-linecap="round" d="M8 21h8M12 17v4"/></svg></div>
       <h3>Website Design</h3>
-      <p>Clean, mobile-ready websites that represent your business professionally and convert visitors into customers.</p>
-      <span class="service-price">From $599</span>
+      <p>Clean, mobile-ready websites that represent your business professionally and convert visitors into clients.</p>
+      <span class="svc-price">From $599</span>
     </div>
-    <div class="service-card">
-      <div class="service-icon"><svg fill="none" viewBox="0 0 24 24" stroke="#16a872" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></div>
+    <div class="svc">
+      <div class="svc-icon"><svg fill="none" viewBox="0 0 24 24" stroke="#e63946" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></div>
       <h3>Logo & Branding</h3>
       <p>A distinctive logo and brand identity that makes your business memorable from the very first impression.</p>
-      <span class="service-price">From $110</span>
+      <span class="svc-price">From $110</span>
     </div>
-    <div class="service-card">
-      <div class="service-icon"><svg fill="none" viewBox="0 0 24 24" stroke="#16a872" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div>
+    <div class="svc">
+      <div class="svc-icon"><svg fill="none" viewBox="0 0 24 24" stroke="#e63946" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div>
       <h3>Business Email Setup</h3>
-      <p>Get a professional email using your own domain instead of Gmail or Yahoo. We handle the full setup for you.</p>
-      <span class="service-price">$99</span>
+      <p>Get a professional email at your own domain. We handle the full setup in under 24 hours.</p>
+      <span class="svc-price">$99</span>
     </div>
-    <div class="service-card">
-      <div class="service-icon"><svg fill="none" viewBox="0 0 24 24" stroke="#16a872" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6.75v6.75"/></svg></div>
+    <div class="svc">
+      <div class="svc-icon"><svg fill="none" viewBox="0 0 24 24" stroke="#e63946" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6.75v6.75"/></svg></div>
       <h3>Digital Consulting</h3>
-      <p>Not sure where to start? We map out exactly what your business needs digitally and build a clear action plan.</p>
-      <span class="service-price">$200 per session</span>
+      <p>Not sure where to start? One session with us and you'll have a clear action plan for your digital presence.</p>
+      <span class="svc-price">$200 per session</span>
     </div>
   </div>
 </section>
 
 <section id="why">
   <div class="reveal">
-    <p class="section-label">Why Jeego IT</p>
-    <h2 class="section-title">We work smarter,<br>so you get <em>results faster.</em></h2>
-    <p class="section-sub">Lean, direct, and committed to delivering professional-grade work at prices that make sense for small businesses.</p>
-    <div class="why-features">
-      <div class="why-feature"><span class="why-feature-num">01</span><div><h4>Personal attention, every time</h4><p>You work directly with Mohamed, not a rotating team. Your business gets real focus, not a ticket number.</p></div></div>
-      <div class="why-feature"><span class="why-feature-num">02</span><div><h4>Modern tools, sharp results</h4><p>We use the latest design and development tools to deliver better quality at a price that makes sense.</p></div></div>
-      <div class="why-feature"><span class="why-feature-num">03</span><div><h4>Built for small businesses</h4><p>Everything we do is priced and scoped for small business reality. No enterprise bloat, no confusing packages.</p></div></div>
-      <div class="why-feature"><span class="why-feature-num">04</span><div><h4>Fast turnaround</h4><p>Most projects delivered within 48 hours. Need it faster? Just ask and we will make it work.</p></div></div>
+    <p class="sec-label">Why Kulan Studio</p>
+    <h2 class="sec-title">We work smarter,<br>so you get <em>results faster.</em></h2>
+    <p class="sec-sub">Lean, direct, and committed to professional-grade work at prices built for small business reality.</p>
+    <div class="why-feats">
+      <div class="why-feat"><span class="why-feat-num">01</span><div><h4>Personal attention every time</h4><p>You work directly with Mohamed, not a rotating team. Your project gets real focus.</p></div></div>
+      <div class="why-feat"><span class="why-feat-num">02</span><div><h4>Modern tools, sharp results</h4><p>We use the latest design and development tools to deliver better quality at prices that make sense.</p></div></div>
+      <div class="why-feat"><span class="why-feat-num">03</span><div><h4>Built for small businesses</h4><p>No enterprise bloat, no confusing packages. Just what you need, priced fairly.</p></div></div>
+      <div class="why-feat"><span class="why-feat-num">04</span><div><h4>Fast turnaround</h4><p>Most projects delivered within 48 hours. Need it faster? Just ask.</p></div></div>
     </div>
   </div>
   <div class="why-visual reveal">
-    <svg class="why-visual-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="0" width="80" height="80" rx="18" fill="#c8ead9" stroke="#16a872" stroke-width="1.5"/>
-      <line x1="16" y1="40" x2="33" y2="40" stroke="#16a872" stroke-width="2" stroke-linecap="round"/>
-      <line x1="47" y1="40" x2="64" y2="40" stroke="#16a872" stroke-width="2" stroke-linecap="round"/>
-      <line x1="40" y1="16" x2="40" y2="33" stroke="#16a872" stroke-width="2" stroke-linecap="round"/>
-      <line x1="40" y1="47" x2="40" y2="64" stroke="#16a872" stroke-width="2" stroke-linecap="round"/>
-      <line x1="22" y1="22" x2="31" y2="31" stroke="#16a872" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-      <line x1="49" y1="49" x2="58" y2="58" stroke="#16a872" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-      <line x1="58" y1="22" x2="49" y2="31" stroke="#16a872" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-      <line x1="22" y1="58" x2="31" y2="49" stroke="#16a872" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-      <circle cx="40" cy="40" r="8" fill="#e8f7f1" stroke="#16a872" stroke-width="1.5"/>
-      <circle cx="40" cy="40" r="3.5" fill="#16a872"/>
-      <circle cx="16" cy="40" r="3" fill="#16a872"/>
-      <circle cx="64" cy="40" r="3" fill="#16a872"/>
-      <circle cx="40" cy="16" r="3" fill="#16a872"/>
-      <circle cx="40" cy="64" r="3" fill="#16a872"/>
-    </svg>
-    <h3>Jeego IT & Consulting</h3>
-    <p>Your dedicated digital partner for growing your business presence online. From idea to launch, we've got you covered.</p>
-    <span class="green-pill">Small Business Focused</span>
+    <div class="why-mark"><div class="wm1"></div><div class="wm2"></div><div class="wm3"></div><div class="wm4"></div></div>
+    <h3>Kulan Studio</h3>
+    <p>Your dedicated digital partner for growing your business online. From idea to launch, we've got you covered.</p>
+    <span class="why-pill">Small Business Focused</span>
   </div>
 </section>
 
 <section id="how">
-  <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto 60px;">
-    <p class="section-label">The process</p>
-    <h2 class="section-title">Simple. Fast. <em>Done right.</em></h2>
-    <p class="section-sub" style="margin:0 auto;">Getting your business online should not feel complicated. Here is how we make it easy.</p>
+  <div class="reveal">
+    <p class="sec-label">The process</p>
+    <h2 class="sec-title">Simple. Fast. <em>Done right.</em></h2>
+    <p class="sec-sub">Getting your business online should not feel complicated.</p>
   </div>
   <div class="steps reveal">
-    <div class="step"><div class="step-num">1</div><h3>Tell us what you need</h3><p>Fill out our project form. We review your details and follow up within a few hours.</p></div>
-    <div class="step"><div class="step-num">2</div><h3>We get to work</h3><p>We design, build, and set everything up. Usually within 48 hours. You see a preview first.</p></div>
-    <div class="step"><div class="step-num">3</div><h3>You go live</h3><p>Approve it and we launch. We stay available for tweaks and questions after delivery.</p></div>
+    <div class="step"><div class="step-num">1</div><h3>Tell us what you need</h3><p>Fill out our project form. We review and follow up within a few hours.</p></div>
+    <div class="step"><div class="step-num">2</div><h3>We get to work</h3><p>We design and build everything. You see a preview before anything goes live.</p></div>
+    <div class="step"><div class="step-num">3</div><h3>You go live</h3><p>Approve it and we launch. We stay available for tweaks after delivery.</p></div>
   </div>
 </section>
 
 <section id="maintenance">
-  <div class="maintenance-intro reveal">
-    <h2 class="section-title">Need ongoing support?</h2>
-    <p class="section-sub" style="margin:0 auto;">Keep your website secure, backed up, and running smoothly every month.</p>
+  <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto 56px;">
+    <p class="sec-label">Ongoing support</p>
+    <h2 class="sec-title">Need someone to keep<br>your site <em>running smoothly?</em></h2>
+    <p class="sec-sub" style="margin:0 auto;">Simple monthly plans, cancel any time.</p>
   </div>
-  <div class="plan-grid reveal">
-    <div class="plan-card">
+  <div class="plans reveal">
+    <div class="plan">
       <div class="plan-name">Basic</div>
       <div class="plan-price">$29<span>/mo</span></div>
       <div class="plan-divider"></div>
       <p class="plan-desc">Hosting management, automated backups, and uptime monitoring.</p>
       <a href="start-a-project.html?plan=basic" class="plan-btn">Get Basic</a>
     </div>
-    <div class="plan-card popular">
-      <div class="popular-badge">Most Popular</div>
+    <div class="plan pop">
+      <div class="pop-badge">Most Popular</div>
       <div class="plan-name">Standard</div>
       <div class="plan-price">$59<span>/mo</span></div>
       <div class="plan-divider"></div>
-      <p class="plan-desc">Everything in Basic, plus content updates (1hr/month) and security checks.</p>
+      <p class="plan-desc">Everything in Basic, plus content updates and security checks.</p>
       <a href="start-a-project.html?plan=standard" class="plan-btn">Get Standard</a>
     </div>
-    <div class="plan-card">
+    <div class="plan">
       <div class="plan-name">Pro</div>
       <div class="plan-price">$99<span>/mo</span></div>
       <div class="plan-divider"></div>
-      <p class="plan-desc">Everything in Standard, plus priority support and a monthly health report.</p>
+      <p class="plan-desc">Everything in Standard, plus priority support and monthly reports.</p>
       <a href="start-a-project.html?plan=pro" class="plan-btn">Get Pro</a>
     </div>
   </div>
@@ -317,72 +336,70 @@ footer { background: var(--footer-bg); padding: 56px 60px 32px; }
 
 <section id="contact">
   <div class="reveal">
-    <p class="section-label">Get in touch</p>
-    <h2 class="section-title" style="max-width:480px;margin:0 auto 16px;">Have a question? We'd <em>love to hear from you.</em></h2>
-    <p class="section-sub" style="margin:0 auto 48px;">Not ready to start a project yet? Reach out and we will get back to you promptly.</p>
+    <p class="sec-label">Get in touch</p>
+    <h2 class="sec-title">Have a question?<br>We'd <em>love to hear from you.</em></h2>
+    <p class="sec-sub">Not ready to start yet? Reach out and we will get back to you promptly.</p>
   </div>
-  <div class="contact-options reveal">
-    <a href="mailto:mohamed@jeegoit.com" class="contact-card">
-      <div class="contact-card-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#16a872" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div>
-      <div class="contact-card-text"><small>Email us</small>mohamed@jeegoit.com</div>
+  <div class="contact-cards reveal">
+    <a href="mailto:mohamed@kulanstudio.com" class="contact-card">
+      <div class="contact-card-label">Email us</div>
+      <div class="contact-card-value">mohamed@kulanstudio.com</div>
     </a>
     <a href="https://wa.me/16146012322" target="_blank" class="contact-card">
-      <div class="contact-card-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#16a872" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></div>
-      <div class="contact-card-text"><small>WhatsApp</small>+1 614-601-2322</div>
+      <div class="contact-card-label">WhatsApp</div>
+      <div class="contact-card-value">+1 614-601-2322</div>
     </a>
     <a href="start-a-project.html" class="contact-card">
-      <div class="contact-card-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#16a872" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg></div>
-      <div class="contact-card-text"><small>Start a project</small>Fill out our form</div>
+      <div class="contact-card-label">Start a project</div>
+      <div class="contact-card-value">Fill out our form →</div>
     </a>
   </div>
 </section>
 
 <footer>
   <div class="footer-top">
-    <div class="footer-brand-block">
-      <span class="footer-brand">JEEGO IT</span>
-      <p>IT & Consulting Services</p>
+    <div>
+      <span class="footer-brand">Kulan <span>Studio</span></span>
+      <p class="footer-desc">IT & Consulting Services for small businesses that want to look professional online.</p>
       <div class="footer-social">
-        <a href="#" class="social-btn" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-        <a href="#" class="social-btn" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-        <a href="#" class="social-btn" title="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.16 8.16 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg></a>
+        <a href="#" class="social-btn"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" class="social-btn"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="#" class="social-btn"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.16 8.16 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg></a>
       </div>
     </div>
     <div class="footer-links">
-      <div class="footer-links-col">
+      <div class="footer-col">
         <h4>Services</h4>
-        <a href="services.html#website-design">Website Design</a>
-        <a href="services.html#logo-branding">Logo & Branding</a>
-        <a href="services.html#business-email">Business Email</a>
-        <a href="services.html#consulting">Digital Consulting</a>
+        <a href="services.html">Website Design</a>
+        <a href="services.html">Logo & Branding</a>
+        <a href="services.html">Business Email</a>
+        <a href="services.html">Consulting</a>
       </div>
-      <div class="footer-links-col">
+      <div class="footer-col">
         <h4>Maintenance</h4>
-        <a href="#maintenance">Basic Plan</a>
-        <a href="#maintenance">Standard Plan</a>
-        <a href="#maintenance">Pro Plan</a>
+        <a href="#maintenance">Basic — $29/mo</a>
+        <a href="#maintenance">Standard — $59/mo</a>
+        <a href="#maintenance">Pro — $99/mo</a>
       </div>
-      <div class="footer-links-col">
+      <div class="footer-col">
         <h4>Contact</h4>
-        <a href="mailto:mohamed@jeegoit.com">Email Us</a>
+        <a href="mailto:mohamed@kulanstudio.com">Email Us</a>
         <a href="https://wa.me/16146012322">WhatsApp</a>
         <a href="start-a-project.html">Start a Project</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 Jeego IT & Consulting Services. All rights reserved.</p>
-    <p>mohamed@jeegoit.com</p>
+    <p>© 2025 Kulan Studio. All rights reserved.</p>
+    <p>mohamed@kulanstudio.com</p>
   </div>
 </footer>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 80);
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*90); });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
