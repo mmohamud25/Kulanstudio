@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casri Boutique — Modern Somali Fashion</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#0a0a0a;--black2:#141414;--rose:#c8787a;--rose2:#e89a9c;--roseg:#f8e8e8;--cream:#fdfaf8;--muted:#7a6060;--border:#eadada;}
+body{font-family:'Instrument Sans',sans-serif;background:var(--cream);color:var(--black);}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 64px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.08);}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:22px;text-decoration:none;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:14px;text-decoration:none;transition:opacity .2s;}
+.nav-links a:hover{opacity:.6;}
+.nav-cta{padding:10px 22px;border-radius:8px;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none;transition:opacity .2s;}
+.nav-cta:hover{opacity:.85;}
+@media(max-width:768px){nav{padding:14px 20px;}.nav-links{display:none;}}
+nav{background:rgba(253,250,248,.96);}
+.nav-logo{color:var(--black);font-style:italic;}
+.nav-links a{color:var(--muted);}
+.nav-cta{background:var(--black);color:#fff;}
+
+.hero{padding:120px 64px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.hero-tag{display:inline-block;background:var(--roseg);color:var(--rose);font-size:12px;font-weight:500;letter-spacing:3px;padding:6px 16px;border-radius:100px;text-transform:uppercase;margin-bottom:20px;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(38px,5vw,66px);line-height:1.05;margin-bottom:20px;}
+.hero h1 em{font-style:italic;color:var(--rose);}
+.hero p{font-size:17px;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:16px;max-width:440px;}
+.hero-somali{font-family:'DM Serif Display',serif;font-size:15px;color:var(--rose);font-style:italic;margin-bottom:28px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;font-family:'Instrument Sans',sans-serif;transition:all .2s;}
+.btn-black{background:var(--black);color:#fff;}
+.btn-black:hover{background:#222;transform:translateY(-2px);}
+.btn-ghost{border:1.5px solid var(--border);color:var(--black);}
+.btn-ghost:hover{border-color:var(--rose);color:var(--rose);}
+.hero-visual{background:var(--black);border-radius:24px;padding:52px 44px;text-align:center;}
+.hero-visual h3{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;margin-bottom:8px;}
+.hero-visual p{font-size:14px;color:rgba(255,255,255,.4);margin-bottom:32px;}
+.color-dots{display:flex;justify-content:center;gap:10px;margin-bottom:28px;}
+.dot{width:32px;height:32px;border-radius:50%;}
+
+.collection{padding:100px 64px;background:#fff;}
+.section-label{font-size:12px;font-weight:500;letter-spacing:4px;color:var(--rose);text-transform:uppercase;margin-bottom:12px;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,46px);margin-bottom:16px;}
+.section-title em{font-style:italic;color:var(--rose);}
+.section-sub{font-size:16px;font-weight:300;color:var(--muted);max-width:500px;line-height:1.8;margin-bottom:56px;}
+.col-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.col-card{border:1.5px solid var(--border);border-radius:16px;overflow:hidden;transition:all .3s;}
+.col-card:hover{border-color:var(--rose);transform:translateY(-4px);box-shadow:0 16px 40px rgba(200,120,122,.08);}
+.col-img{height:240px;display:flex;align-items:center;justify-content:center;font-size:64px;}
+.col-info{padding:20px 22px;}
+.col-name{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:4px;}
+.col-somali{font-size:12px;color:var(--rose);font-style:italic;margin-bottom:8px;}
+.col-desc{font-size:13px;font-weight:300;color:var(--muted);line-height:1.65;margin-bottom:14px;}
+.col-price{font-family:'DM Serif Display',serif;font-size:20px;color:var(--black);}
+
+.about{padding:100px 64px;background:var(--black);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.about h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,44px);color:#fff;margin-bottom:20px;}
+.about h2 em{font-style:italic;color:var(--rose2);}
+.about p{font-size:16px;font-weight:300;color:rgba(255,255,255,.5);line-height:1.85;margin-bottom:16px;}
+.about-visual{text-align:center;}
+.about-visual p{font-family:'DM Serif Display',serif;font-size:32px;color:rgba(255,255,255,.15);font-style:italic;line-height:1.4;}
+.about-visual span{font-size:14px;color:var(--rose);display:block;margin-top:12px;}
+
+@media(max-width:768px){
+  .hero,.collection,.about{padding:72px 20px;}
+  .hero,.about{grid-template-columns:1fr;}
+  .col-grid{grid-template-columns:1fr 1fr;}
+}
+
+/* Mobile hamburger */
+.nav-burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:transparent;border:1.5px solid rgba(255,255,255,0.15);border-radius:8px;cursor:pointer;padding:8px;transition:border-color 0.2s;}
+.nav-burger span{display:block;width:18px;height:2px;background:#ffffff;border-radius:2px;transition:all 0.25s ease;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:65px;left:0;right:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);border-bottom:1px solid #e8ddd9;z-index:99;padding:24px;flex-direction:column;gap:4px;box-shadow:0 16px 40px rgba(0,0,0,0.08);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:16px;color:#333;text-decoration:none;padding:14px 16px;border-radius:10px;transition:all 0.15s;display:block;}
+.mobile-menu a:hover{background:#f5f5f5;}
+.mobile-menu-divider{height:1px;background:#e8ddd9;margin:8px 0;}
+@media(max-width:768px){.nav-links{display:none!important;}.nav-burger{display:flex!important;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Casri Boutique</a>
+  <ul class="nav-links">
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Shop Now</a></li>
+    <button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-tag">Modern Somali Fashion</div>
+    <h1>Where tradition<br>meets <em>modern style.</em></h1>
+    <p>Casri Boutique brings the elegance of Somali fashion into contemporary everyday wear. Custom diracs, modern abayas, and culturally inspired pieces designed for the diaspora woman.</p>
+    <p class="hero-somali">"Casri" — Modern in Somali</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="#collection" class="btn btn-black">Shop the Collection</a>
+      <a href="#contact" class="btn btn-ghost">Custom Orders</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <h3>Casri Boutique</h3>
+    <p>Somali fashion for the modern woman</p>
+    <div class="color-dots">
+      <div class="dot" style="background:#8B1A4A;"></div>
+      <div class="dot" style="background:#2C5F8A;"></div>
+      <div class="dot" style="background:#C8783A;"></div>
+      <div class="dot" style="background:#1A6B3A;"></div>
+      <div class="dot" style="background:#7B4A8A;"></div>
+    </div>
+    <p style="font-size:13px;color:rgba(255,255,255,.3);margin-bottom:0;">Custom colors available on all pieces</p>
+    <div style="margin-top:24px;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;">
+      <p style="font-size:13px;color:rgba(255,255,255,.4);margin-bottom:0;">Free alterations on all custom orders</p>
+    </div>
+  </div>
+</section>
+
+<section class="collection" id="collection">
+  <p class="section-label">Our Collection</p>
+  <h2 class="section-title">Pieces that celebrate<br><em>who you are.</em></h2>
+  <p class="section-sub">Every piece is designed with the diaspora woman in mind — proud of her roots, confident in her identity, and stylish in any setting.</p>
+  <div class="col-grid">
+    <div class="col-card">
+      <div class="col-img" style="background:#f8e8f0;">👗</div>
+      <div class="col-info">
+        <div class="col-name">Modern Dirac</div>
+        <div class="col-somali">Dirac Casri</div>
+        <div class="col-desc">Contemporary take on the classic Somali dirac. Lightweight chiffon in seasonal colors, suitable for weddings, Eid, and everyday elegance.</div>
+        <div class="col-price">From $120</div>
+      </div>
+    </div>
+    <div class="col-card">
+      <div class="col-img" style="background:#e8f0f8;">🧕</div>
+      <div class="col-info">
+        <div class="col-name">Contemporary Abaya</div>
+        <div class="col-somali">Abaya Casri</div>
+        <div class="col-desc">Modern abaya designs that balance modesty with style. Available in solid colors and embroidered options for special occasions.</div>
+        <div class="col-price">From $95</div>
+      </div>
+    </div>
+    <div class="col-card">
+      <div class="col-img" style="background:#f0ece8;">🎀</div>
+      <div class="col-info">
+        <div class="col-name">Guntiino Set</div>
+        <div class="col-somali">Guntiino</div>
+        <div class="col-desc">Traditional Somali guntiino reimagined for the modern wardrobe. Full set including headwrap and matching garment.</div>
+        <div class="col-price">From $150</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div>
+    <p class="section-label" style="color:var(--rose);">Our Story</p>
+    <h2>Fashion that knows<br><em>where it comes from.</em></h2>
+    <p>Casri Boutique was founded by a Somali woman who grew up in the diaspora and struggled to find clothing that honored both her heritage and her modern lifestyle.</p>
+    <p>Every piece is thoughtfully designed so you never have to choose between being yourself and being stylish. Custom orders are our specialty — because every woman deserves something made exactly for her.</p>
+    <a href="#contact" class="btn btn-ghost" style="margin-top:12px;border-color:rgba(255,255,255,.2);color:#fff;">Get in Touch</a>
+  </div>
+  <div class="about-visual">
+    <p>"Quruxda waa xoogga haweenka Soomaaliyeed"</p>
+    <span>The beauty of Somali women is their strength</span>
+  </div>
+</section>
+
+<section id="contact" style="padding:80px 64px;background:var(--roseg);text-align:center;">
+  <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(26px,3.5vw,40px);color:var(--black);margin-bottom:12px;">Ready to wear something beautiful?</h2>
+  <p style="font-size:16px;color:var(--muted);margin-bottom:36px;font-weight:300;">Browse the collection or place a custom order. DM us on Instagram or WhatsApp.</p>
+  <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+    <div style="background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:20px 28px;">
+      <div style="font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Instagram</div>
+      <div style="font-size:15px;color:var(--black);font-weight:500;">@casriboutique</div>
+    </div>
+    <div style="background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:20px 28px;">
+      <div style="font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">WhatsApp</div>
+      <div style="font-size:15px;color:var(--black);font-weight:500;">+1 614-000-0000</div>
+    </div>
+    <div style="background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:20px 28px;">
+      <div style="font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Custom Orders</div>
+      <div style="font-size:15px;color:var(--black);font-weight:500;">2-3 weeks delivery</div>
+    </div>
+  </div>
+</section>
+<footer style="background:#111;padding:32px 64px 24px;">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);">
+    <p style="font-size:13px;color:rgba(255,255,255,0.4);">Website by <a href="https://kulanstudio.com" target="_blank" style="color:#e63946;text-decoration:none;">Kulan Studio</a> &nbsp;|&nbsp; <a href="https://kulanstudio.com/start-a-project.html" target="_blank" style="color:#e63946;text-decoration:none;">Get your own website</a></p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.25);">kulanstudio.com</p>
+  </div>
+  <div style="margin-top:12px;font-size:12px;color:rgba(255,255,255,0.35);">
+  Follow us:
+  <a href="https://facebook.com/kulanstudio" target="_blank" style="color:inherit;margin-left:8px;">fb @kulanstudio</a>
+  <a href="https://instagram.com/kulanstudio" target="_blank" style="color:inherit;margin-left:8px;">ig @kulanstudio</a>
+  <a href="https://tiktok.com/@kulanstudio" target="_blank" style="color:inherit;margin-left:8px;">tt @kulanstudio</a>
+  <a href="https://wa.me/16146012322" target="_blank" style="color:inherit;margin-left:8px;">wa +1 614-601-2322</a>
+</div>
+</footer>
+</body>
+</html>

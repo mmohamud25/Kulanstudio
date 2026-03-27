@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuur Learning Center — Somali & Academic Tutoring</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#0a1a3a;--navy2:#142244;--orange:#e87820;--orange2:#ff9a40;--cream:#fffdf8;--muted:#5a6a8a;--border:#d8e0ee;}
+body{font-family:'Instrument Sans',sans-serif;background:var(--cream);color:var(--navy);}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 64px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.08);}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:22px;text-decoration:none;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:14px;text-decoration:none;transition:opacity .2s;}
+.nav-links a:hover{opacity:.6;}
+.nav-cta{padding:10px 22px;border-radius:8px;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none;transition:opacity .2s;}
+.nav-cta:hover{opacity:.85;}
+@media(max-width:768px){nav{padding:14px 20px;}.nav-links{display:none;}}
+nav{background:rgba(255,253,248,.96);}
+.nav-logo{color:var(--navy);}
+.nav-links a{color:var(--muted);}
+.nav-cta{background:var(--orange);color:#fff;}
+
+.hero{padding:120px 64px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.tag{display:inline-block;background:rgba(232,120,32,.1);color:var(--orange);font-size:12px;font-weight:500;letter-spacing:2px;padding:6px 16px;border-radius:100px;text-transform:uppercase;margin-bottom:20px;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(38px,5vw,64px);line-height:1.05;margin-bottom:20px;}
+.hero h1 em{font-style:italic;color:var(--orange);}
+.hero p{font-size:17px;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:36px;max-width:440px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;font-family:'Instrument Sans',sans-serif;transition:all .2s;}
+.btn-primary{background:var(--orange);color:#fff;}
+.btn-primary:hover{background:#c86010;transform:translateY(-2px);}
+.btn-ghost{border:1.5px solid var(--border);color:var(--navy);}
+.btn-ghost:hover{border-color:var(--orange);color:var(--orange);}
+.hero-visual{background:var(--navy);border-radius:24px;padding:40px;}
+.hero-visual h3{font-family:'DM Serif Display',serif;font-size:22px;color:#fff;margin-bottom:24px;}
+.course-item{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.course-item:last-child{border-bottom:none;}
+.course-name{font-size:15px;color:rgba(255,255,255,.8);}
+.course-age{font-size:12px;color:var(--orange2);}
+
+.programs{padding:100px 64px;background:#fff;}
+.section-label{font-size:12px;font-weight:500;letter-spacing:4px;color:var(--orange);text-transform:uppercase;margin-bottom:12px;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,46px);margin-bottom:16px;}
+.section-title em{font-style:italic;color:var(--orange);}
+.section-sub{font-size:16px;font-weight:300;color:var(--muted);max-width:500px;line-height:1.8;margin-bottom:56px;}
+.prog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+.prog-card{border:1.5px solid var(--border);border-radius:16px;padding:32px;transition:all .3s;position:relative;overflow:hidden;}
+.prog-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.prog-card:hover{border-color:rgba(232,120,32,.3);transform:translateY(-4px);}.prog-card:hover::before{transform:scaleX(1);}
+.prog-icon{font-size:40px;margin-bottom:16px;}
+.prog-card h3{font-family:'DM Serif Display',serif;font-size:22px;margin-bottom:8px;}
+.prog-card p{font-size:14px;font-weight:300;color:var(--muted);line-height:1.7;margin-bottom:16px;}
+.prog-age{font-size:12px;font-weight:500;color:var(--orange);background:rgba(232,120,32,.1);padding:4px 12px;border-radius:100px;display:inline-block;}
+
+.stats{padding:80px 64px;background:var(--navy);text-align:center;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:800px;margin:0 auto 40px;}
+.stat-card{padding:24px;}
+.stat-num{font-family:'DM Serif Display',serif;font-size:44px;color:var(--orange2);line-height:1;margin-bottom:8px;}
+.stat-label{font-size:13px;color:rgba(255,255,255,.4);}
+
+@media(max-width:768px){
+  .hero,.programs,.stats{padding:72px 20px;}
+  .hero{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+}
+
+/* Mobile hamburger */
+.nav-burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:transparent;border:1.5px solid rgba(0,0,0,0.15);border-radius:8px;cursor:pointer;padding:8px;transition:border-color 0.2s;}
+.nav-burger span{display:block;width:18px;height:2px;background:#1a1a1a;border-radius:2px;transition:all 0.25s ease;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:65px;left:0;right:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);border-bottom:1px solid #e8ddd9;z-index:99;padding:24px;flex-direction:column;gap:4px;box-shadow:0 16px 40px rgba(0,0,0,0.08);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:16px;color:#333;text-decoration:none;padding:14px 16px;border-radius:10px;transition:all 0.15s;display:block;}
+.mobile-menu a:hover{background:#f5f5f5;}
+.mobile-menu-divider{height:1px;background:#e8ddd9;margin:8px 0;}
+@media(max-width:768px){.nav-links{display:none!important;}.nav-burger{display:flex!important;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Nuur Learning Center</a>
+  <ul class="nav-links">
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#stats">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Enroll Now</a></li>
+    <button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="tag">Nuur — Light in Somali</div>
+    <h1>Education that honors<br><em>your roots and your future.</em></h1>
+    <p>Academic tutoring, Somali language classes, Quran instruction, and college prep — all in one community-centered learning environment designed for Somali students.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="#programs" class="btn btn-primary">View Programs</a>
+      <a href="#contact" class="btn btn-ghost">Book a Free Session</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <h3>Our Programs at a Glance</h3>
+    <div class="course-item"><span class="course-name">Academic Tutoring (K-12)</span><span class="course-age">Ages 5-18</span></div>
+    <div class="course-item"><span class="course-name">Somali Language Classes</span><span class="course-age">All ages</span></div>
+    <div class="course-item"><span class="course-name">Quran & Islamic Studies</span><span class="course-age">Ages 5-16</span></div>
+    <div class="course-item"><span class="course-name">SAT / ACT Prep</span><span class="course-age">Ages 15-18</span></div>
+    <div class="course-item"><span class="course-name">College Application Help</span><span class="course-age">Ages 16-18</span></div>
+  </div>
+</section>
+
+<section class="programs" id="programs">
+  <p class="section-label">Our Programs</p>
+  <h2 class="section-title">Building bright futures<br><em>one student at a time.</em></h2>
+  <p class="section-sub">We believe every Somali child deserves support that understands where they come from and where they are going.</p>
+  <div class="prog-grid">
+    <div class="prog-card">
+      <div class="prog-icon">📚</div>
+      <h3>Academic Tutoring</h3>
+      <p>Math, Science, English, and Social Studies tutoring aligned with Ohio curriculum standards. Small groups and one-on-one options available.</p>
+      <span class="prog-age">Grades K-12</span>
+    </div>
+    <div class="prog-card">
+      <div class="prog-icon">🇸🇴</div>
+      <h3>Somali Language</h3>
+      <p>Reading, writing, and speaking Somali. For children born in the diaspora who want to stay connected to their heritage and culture.</p>
+      <span class="prog-age">All Ages</span>
+    </div>
+    <div class="prog-card">
+      <div class="prog-icon">📖</div>
+      <h3>Quran & Islamic Studies</h3>
+      <p>Quran memorization and recitation, Islamic history, and practical deen education delivered by qualified and experienced teachers.</p>
+      <span class="prog-age">Ages 5-16</span>
+    </div>
+    <div class="prog-card">
+      <div class="prog-icon">🎓</div>
+      <h3>College Prep</h3>
+      <p>SAT and ACT preparation, application essays, scholarship guidance, and FAFSA support. We've helped students get into top universities.</p>
+      <span class="prog-age">Ages 15-18</span>
+    </div>
+  </div>
+</section>
+
+<section class="stats" id="stats">
+  <p class="section-label" style="color:var(--orange);">Our Impact</p>
+  <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,44px);color:#fff;margin-bottom:48px;">Nuur — <em style="font-style:italic;color:var(--orange2);">lighting the way.</em></h2>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-num">200+</div><div class="stat-label">Students enrolled</div></div>
+    <div class="stat-card"><div class="stat-num">12</div><div class="stat-label">Qualified teachers</div></div>
+    <div class="stat-card"><div class="stat-num">95%</div><div class="stat-label">Grade improvement rate</div></div>
+    <div class="stat-card"><div class="stat-num">6+</div><div class="stat-label">Years serving Kismayo, Somalia</div></div>
+  </div>
+  <a href="#contact" style="display:inline-block;background:var(--orange);color:#fff;font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:500;padding:14px 32px;border-radius:8px;text-decoration:none;">Enroll Your Child Today</a>
+</section>
+
+<section id="contact" style="padding:80px 64px;background:var(--cream);text-align:center;">
+  <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(26px,3.5vw,40px);color:var(--navy);margin-bottom:12px;">Ready to enroll?</h2>
+  <p style="font-size:16px;color:var(--muted);margin-bottom:36px;font-weight:300;">First session is free. Contact us to schedule a placement assessment.</p>
+  <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+    <div style="border:1.5px solid var(--border);border-radius:12px;padding:20px 28px;">
+      <div style="font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Call or WhatsApp</div>
+      <div style="font-size:15px;color:var(--navy);font-weight:500;">+1 614-000-0000</div>
+    </div>
+    <div style="border:1.5px solid var(--border);border-radius:12px;padding:20px 28px;">
+      <div style="font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Classes</div>
+      <div style="font-size:15px;color:var(--navy);font-weight:500;">Weekdays + Weekends</div>
+    </div>
+    <div style="border:1.5px solid var(--border);border-radius:12px;padding:20px 28px;">
+      <div style="font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Location</div>
+      <div style="font-size:15px;color:var(--navy);font-weight:500;">Kismayo, Somalia</div>
+    </div>
+  </div>
+</section>
+<footer style="background:#111;padding:32px 64px 24px;">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);">
+    <p style="font-size:13px;color:rgba(255,255,255,0.4);">Website by <a href="https://kulanstudio.com" target="_blank" style="color:#e63946;text-decoration:none;">Kulan Studio</a> &nbsp;|&nbsp; <a href="https://kulanstudio.com/start-a-project.html" target="_blank" style="color:#e63946;text-decoration:none;">Get your own website</a></p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.25);">kulanstudio.com</p>
+  </div>
+  <div style="margin-top:12px;font-size:12px;color:rgba(255,255,255,0.35);">
+  Follow us:
+  <a href="https://facebook.com/kulanstudio" target="_blank" style="color:inherit;margin-left:8px;">fb @kulanstudio</a>
+  <a href="https://instagram.com/kulanstudio" target="_blank" style="color:inherit;margin-left:8px;">ig @kulanstudio</a>
+  <a href="https://tiktok.com/@kulanstudio" target="_blank" style="color:inherit;margin-left:8px;">tt @kulanstudio</a>
+  <a href="https://wa.me/16146012322" target="_blank" style="color:inherit;margin-left:8px;">wa +1 614-601-2322</a>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barakah Market — Your Halal Grocery Store</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--green:#1a5c2a;--green2:#2a7a3a;--gold:#c8a84a;--cream:#f8faf6;--dark:#0e1e12;--muted:#4a6a52;--border:#d4e4d8;}
+body{font-family:'Instrument Sans',sans-serif;background:var(--cream);color:var(--dark);}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 64px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.08);}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:22px;text-decoration:none;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:14px;text-decoration:none;transition:opacity .2s;}
+.nav-links a:hover{opacity:.6;}
+.nav-cta{padding:10px 22px;border-radius:8px;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;text-decoration:none;transition:opacity .2s;}
+.nav-cta:hover{opacity:.85;}
+@media(max-width:768px){nav{padding:14px 20px;}.nav-links{display:none;}}
+nav{background:rgba(248,250,246,.96);}
+.nav-logo{color:var(--green);}
+.nav-links a{color:var(--muted);}
+.nav-cta{background:var(--green);color:#fff;}
+
+.hero{padding:120px 64px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(26,92,42,.1);color:var(--green);font-size:12px;font-weight:500;letter-spacing:2px;padding:6px 16px;border-radius:100px;text-transform:uppercase;margin-bottom:20px;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(38px,5vw,64px);line-height:1.05;margin-bottom:20px;}
+.hero h1 em{font-style:italic;color:var(--green);}
+.hero p{font-size:17px;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:36px;max-width:440px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;font-family:'Instrument Sans',sans-serif;transition:all .2s;}
+.btn-primary{background:var(--green);color:#fff;}
+.btn-primary:hover{background:#144a22;transform:translateY(-2px);}
+.hero-visual{background:var(--green);border-radius:24px;padding:48px 40px;}
+.hero-visual h3{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;margin-bottom:24px;}
+.feature-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.feature-item:last-child{border-bottom:none;}
+.feature-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+.feature-item span{font-size:15px;color:rgba(255,255,255,.8);}
+
+.categories{padding:100px 64px;background:#fff;}
+.section-label{font-size:12px;font-weight:500;letter-spacing:4px;color:var(--green);text-transform:uppercase;margin-bottom:12px;}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,46px);margin-bottom:16px;}
+.section-title em{font-style:italic;color:var(--green);}
+.section-sub{font-size:16px;font-weight:300;color:var(--muted);max-width:500px;line-height:1.8;margin-bottom:56px;}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.cat-card{background:var(--cream);border:1.5px solid var(--border);border-radius:16px;padding:32px 24px;text-align:center;transition:all .3s;}
+.cat-card:hover{border-color:var(--green);transform:translateY(-4px);}
+.cat-icon{font-size:44px;margin-bottom:16px;}
+.cat-card h3{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:8px;color:var(--dark);}
+.cat-card p{font-size:14px;font-weight:300;color:var(--muted);line-height:1.6;}
+.halal-badge{display:inline-block;margin-top:12px;background:rgba(26,92,42,.1);color:var(--green);font-size:11px;font-weight:500;padding:4px 12px;border-radius:100px;letter-spacing:1px;}
+
+.why{padding:100px 64px;background:var(--dark);text-align:center;}
+.why h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,46px);color:#fff;margin-bottom:16px;}
+.why h2 em{font-style:italic;color:var(--gold);}
+.why p{font-size:16px;font-weight:300;color:rgba(255,255,255,.4);max-width:480px;margin:0 auto 56px;line-height:1.8;}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:900px;margin:0 auto 56px;}
+.why-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:28px 20px;text-align:center;}
+.why-num{font-family:'DM Serif Display',serif;font-size:40px;color:var(--gold);line-height:1;margin-bottom:8px;}
+.why-label{font-size:13px;color:rgba(255,255,255,.4);}
+.btn-gold{background:var(--gold);color:var(--dark);font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:600;padding:14px 32px;border-radius:8px;text-decoration:none;transition:opacity .2s;display:inline-block;}
+.btn-gold:hover{opacity:.85;}
+
+@media(max-width:768px){
+  .hero,.categories,.why{padding:72px 20px;}
+  .hero{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:1fr 1fr;}
+  .why-grid{grid-template-columns:1fr 1fr;}
+}
+
+/* Mobile hamburger */
+.nav-burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:transparent;border:1.5px solid rgba(0,0,0,0.15);border-radius:8px;cursor:pointer;padding:8px;transition:border-color 0.2s;}
+.nav-burger span{display:block;width:18px;height:2px;background:#1a1a1a;border-radius:2px;transition:all 0.25s ease;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:65px;left:0;right:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);border-bottom:1px solid #e8ddd9;z-index:99;padding:24px;flex-direction:column;gap:4px;box-shadow:0 16px 40px rgba(0,0,0,0.08);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:16px;color:#333;text-decoration:none;padding:14px 16px;border-radius:10px;transition:all 0.15s;display:block;}
+.mobile-menu a:hover{background:#f5f5f5;}
+.mobile-menu-divider{height:1px;background:#e8ddd9;margin:8px 0;}
+@media(max-width:768px){.nav-links{display:none!important;}.nav-burger{display:flex!important;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Barakah Market</a>
+  <ul class="nav-links">
+    <li><a href="#categories">Products</a></li>
+    <li><a href="#why">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Visit Us</a></li>
+    <button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="badge">100% Halal Certified</div>
+    <h1>Your neighborhood<br><em>halal grocery store.</em></h1>
+    <p>Fresh produce, Somali staples, halal meat, and everyday essentials. Everything your family needs under one roof — sourced and certified with care.</p>
+    <a href="#categories" class="btn btn-primary">Browse Our Products</a>
+  </div>
+  <div class="hero-visual">
+    <h3>Why shop at Barakah?</h3>
+    <div class="feature-item"><div class="feature-dot"></div><span>100% certified halal meat — always fresh</span></div>
+    <div class="feature-item"><div class="feature-dot"></div><span>Somali, East African and Middle Eastern products</span></div>
+    <div class="feature-item"><div class="feature-dot"></div><span>Fresh produce delivered three times a week</span></div>
+    <div class="feature-item"><div class="feature-dot"></div><span>Competitive prices for your whole family</span></div>
+    <div class="feature-item"><div class="feature-dot"></div><span>Community-owned and operated since 2015</span></div>
+  </div>
+</section>
+
+<section class="categories" id="categories">
+  <p class="section-label">What We Carry</p>
+  <h2 class="section-title">Everything your family<br><em>needs, all in one place.</em></h2>
+  <p class="section-sub">From daily essentials to hard-to-find Somali ingredients. We source it so you don't have to search for it.</p>
+  <div class="cat-grid">
+    <div class="cat-card">
+      <div class="cat-icon">🥩</div>
+      <h3>Halal Meat</h3>
+      <p>Fresh goat, lamb, beef and chicken. Slaughtered and prepared according to Islamic guidelines.</p>
+      <span class="halal-badge">Halal Certified</span>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">🌾</div>
+      <h3>Somali Staples</h3>
+      <p>Basmati rice, canjeero mix, digir, xalwo, and all the ingredients your recipes call for.</p>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">🥬</div>
+      <h3>Fresh Produce</h3>
+      <p>Seasonal vegetables and fruits delivered fresh. Including community favorites like muufo ingredients.</p>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">🫖</div>
+      <h3>Spices & Tea</h3>
+      <p>Somali spice blends, cardamom, cumin, and imported teas. Packed fresh for full flavor.</p>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">🧴</div>
+      <h3>Household Essentials</h3>
+      <p>Cleaning products, personal care, and everyday household items at fair prices.</p>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">🍬</div>
+      <h3>Snacks & Drinks</h3>
+      <p>Imported snacks, Middle Eastern beverages, and community favorites your kids will love.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <p class="section-label" style="color:var(--gold);">Our Community</p>
+  <h2>Serving the community<br>with <em>barakah and trust.</em></h2>
+  <p>Barakah Market was founded by a Somali family for the Somali community. We understand what you need because we are part of this community too.</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-num">9+</div><div class="why-label">Years serving Hargeisa, Somaliland</div></div>
+    <div class="why-card"><div class="why-num">500+</div><div class="why-label">Products in store</div></div>
+    <div class="why-card"><div class="why-num">3x</div><div class="why-label">Fresh deliveries weekly</div></div>
+    <div class="why-card"><div class="why-num">100%</div><div class="why-label">Halal certified</div></div>
+  </div>
+  <a href="#contact" class="btn-gold">Come Visit Us</a>
+</section>
+
+<section id="contact" style="padding:80px 64px;background:var(--green);text-align:center;">
+  <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(26px,3.5vw,42px);color:#fff;margin-bottom:12px;">Visit Barakah Market today.</h2>
+  <p style="font-size:16px;color:rgba(255,255,255,.6);margin-bottom:36px;font-weight:300;">Open 7 days a week. We'd love to see you.</p>
+  <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+    <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:20px 28px;">
+      <div style="font-size:11px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Phone</div>
+      <div style="font-size:15px;color:#fff;">+1 614-000-0000</div>
+    </div>
+    <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:20px 28px;">
+      <div style="font-size:11px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Hours</div>
+      <div style="font-size:15px;color:#fff;">Mon-Sat 8am-9pm  Sun 9am-8pm</div>
+    </div>
+    <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:20px 28px;">
+      <div style="font-size:11px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Location</div>
+      <div style="font-size:15px;color:#fff;">Hargeisa, Somaliland</div>
+    </div>
+  </div>
+</section>
+<footer style="background:#111;padding:32px 64px 24px;">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);">
+    <p style="font-size:13px;color:rgba(255,255,255,0.4);">Website by <a href="https://kulanstudio.com" target="_blank" style="color:#e63946;text-decoration:none;">Kulan Studio</a> &nbsp;|&nbsp; <a href="https://kulanstudio.com/start-a-project.html" target="_blank" style="color:#e63946;text-decoration:none;">Get your own website</a></p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.25);">kulanstudio.com</p>
+  </div>
+  <div style="margin-top:12px;font-size:12px;color:rgba(255,255,255,0.35);">
+  Follow us:
+  <a href="https://facebook.com/kulanstudio" target="_blank" style="color:inherit;margin-left:8px;">fb @kulanstudio</a>
+  <a href="https://instagram.com/kulanstudio" target="_blank" style="color:inherit;margin-left:8px;">ig @kulanstudio</a>
+  <a href="https://tiktok.com/@kulanstudio" target="_blank" style="color:inherit;margin-left:8px;">tt @kulanstudio</a>
+  <a href="https://wa.me/16146012322" target="_blank" style="color:inherit;margin-left:8px;">wa +1 614-601-2322</a>
+</div>
+</footer>
+</body>
+</html>
